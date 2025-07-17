@@ -152,12 +152,19 @@ public class FilesHelper {
         return null;
     }
     public static String getFilesPath(Media media){
-        return getFilesRootPath() + switch (getFileType(media.getFilePathOrUrl())){
+        return getFilesRootPath() + switch (getFileType(extention_of(media.getFilePathOrUrl()))){
             case AUDIO -> "voiceNote/";
             case IMAGE -> "images/";
             case VIDEO -> "videos/";
             default -> "file/";
         };
+    }
+    public static String  extention_of(String path) {
+        if (path == null || path.isEmpty()) {
+            return "";
+        }
+        int lastDot = path.lastIndexOf('.');
+        return lastDot > 0 ? path.substring(lastDot + 1) : "";
     }
 
 }

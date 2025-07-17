@@ -4,7 +4,7 @@ import orgs.tuasl_clint.utils.DatabaseConnectionSQLite;
 import java.sql.*;
 
 public class ChatParticipant {
-    private long chatParticipantId;
+    private long id;
     private long chatId;
     private long userId;
     private ChatParticipantRole role;
@@ -35,8 +35,8 @@ public class ChatParticipant {
         this.joinedAt = joinedAt;
     }
 
-    public ChatParticipant(long chatParticipantId, long chatId, long userId, ChatParticipantRole role, Timestamp joinedAt, Timestamp mutedUntil, boolean isPinned, int unreadCount, long lastReadMessageId) {
-        this.chatParticipantId = chatParticipantId;
+    public ChatParticipant(long id, long chatId, long userId, ChatParticipantRole role, Timestamp joinedAt, Timestamp mutedUntil, boolean isPinned, int unreadCount, long lastReadMessageId) {
+        this.id = id;
         this.chatId = chatId;
         this.userId = userId;
         this.role = role;
@@ -47,8 +47,8 @@ public class ChatParticipant {
         this.lastReadMessageId = lastReadMessageId;
     }
 
-    public long getChatParticipantId() { return chatParticipantId; }
-    public void setChatParticipantId(long chatParticipantId) { this.chatParticipantId = chatParticipantId; }
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
     public long getChatId() { return chatId; }
     public void setChatId(long chatId) { this.chatId = chatId; }
     public long getUserId() { return userId; }
@@ -82,7 +82,7 @@ public class ChatParticipant {
             if (isInserted) {
                 try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        this.chatParticipantId = generatedKeys.getLong(1);
+                        this.id = generatedKeys.getLong(1);
                     }
                 }
             }
@@ -98,7 +98,7 @@ public class ChatParticipant {
             statement.setInt(3, isPinned ? 1 : 0);
             statement.setInt(4, unreadCount);
             statement.setLong(5, lastReadMessageId != 0 ? lastReadMessageId : 0);
-            statement.setLong(6, chatParticipantId);
+            statement.setLong(6, id);
 
             return statement.executeUpdate() > 0;
         }
@@ -107,14 +107,14 @@ public class ChatParticipant {
     public boolean delete() throws SQLException {
         String sql = "DELETE FROM chat_participants WHERE chat_participant_id = ?";
         try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql)) {
-            statement.setLong(1, chatParticipantId);
+            statement.setLong(1, id);
             return statement.executeUpdate() > 0;
         }
     }
     @Override
     public String toString() {
         return "ChatParticipant{" +
-                "chatParticipantId=" + chatParticipantId +
+                "chatParticipantId=" + id +
                 ", chatId=" + chatId +
                 ", userId=" + userId +
                 ", role=" + (role != null ? role.name() : "null") +

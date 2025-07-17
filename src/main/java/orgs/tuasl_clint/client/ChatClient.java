@@ -5,10 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import orgs.tuasl_clint.models2.*;
 import orgs.tuasl_clint.protocol.*;
-import orgs.tuasl_clint.utils.ChatTypeAdapter;
-import orgs.tuasl_clint.utils.LocalDateTimeAdapter;
-import orgs.tuasl_clint.utils.TimeStampHelperClass;
-import orgs.tuasl_clint.utils.TimestampAdapter;
+import orgs.tuasl_clint.utils.*;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -46,6 +43,7 @@ public class ChatClient implements AutoCloseable {
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .registerTypeAdapter(Timestamp.class, new TimestampAdapter())
             .registerTypeAdapter(Chat.ChatType.class, new ChatTypeAdapter())
+            .registerTypeAdapter(ChatParticipant.ChatParticipantRole.class, new ChatParticipantsRoleAdapter())
             .serializeNulls()
             .create();
 
@@ -292,6 +290,7 @@ public class ChatClient implements AutoCloseable {
                 // Handle unsolicited new messages (e.g., from other users)
                 if (response.isSuccess() && "New message received".equals(response.getMessage())) {
                     Message newMessage = gson.fromJson(response.getData(), Message.class);
+                    System.out.println("         ================ new Message : "+newMessage);
                     notifyNewMessageReceived(newMessage);
                 }
                 // All other responses are put into the queue for the specific command method that sent the request
@@ -518,10 +517,12 @@ public class ChatClient implements AutoCloseable {
         Request request = new Request(Command.GET_USER_CHATS);
         Response response = sendRequestAndAwaitResponse(request);
 
-        if (response != null && response.isSuccess() && "All chats retrieved for user.".equals(response.getMessage())) {
+        System.out.println("------------   777777777778888888888888887            This Is After The Listener");
+        if (response != null && response.isSuccess() && "User chats retrieved.".equals(response.getMessage())) {
             Type chatListType = new TypeToken<List<Chat>>() {}.getType();
             List<Chat> chats = gson.fromJson(response.getData(), chatListType);
             notifyUserChatsRetrieved(chats); // Notify dedicated listener
+            System.out.println("------------   777777777778888888888888887            This Is After The Listener");
         } else if (response != null) {
             notifyCommandResponse(response);
         }
@@ -945,6 +946,10 @@ public class ChatClient implements AutoCloseable {
      * @return The Response object received from the server, or a timeout response.
      */
     public Response sendRequestAndAwaitResponse(Request request) {
+        if(socket == null || socket.isClosed() || !socket.isConnected()){
+            return new Response(false,"Error Connection To Server",null);
+        }
+        System.out.println("---------------  New Request Will Be Sent TO Server. Request :"+request.toString());
         try {
             responseQueue.clear(); // Clear any stale responses
             out.println(gson.toJson(request));
@@ -953,14 +958,19 @@ public class ChatClient implements AutoCloseable {
             if (response == null) {
                 String errorMsg = "No response from server within timeout for command: " + request.getCommand();
                 notifyConnectionFailure(errorMsg); // Use specific connection failure listener
-                return new Response(false, "Server response timed out.", null);
+                Response response1 = new Response(false, "Server response timed out.", null);
+                System.out.println("---------- Server Response : "+response1.toString());
+                return response1;
             }
+            System.out.println("---------- Server Response : "+response.toString());
             return response;
         } catch (InterruptedException e) {
             String errorMsg = "Waiting for response interrupted: " + e.getMessage();
             notifyConnectionFailure(errorMsg);
             Thread.currentThread().interrupt();
-            return new Response(false, "Client interrupted.", null);
+            Response response = new Response(false, "Client interrupted.", null);
+            System.out.println("---------- Server Response : "+response.toString());
+            return response;
         }
     }
 
@@ -1040,7 +1050,7 @@ public class ChatClient implements AutoCloseable {
         if (currentUser == null) {
             return new Response(false, "Authentication required to download files.", null);
         }
-        if (media == null || media.getId() == 0 || media.getFileName() == null || media.getFileName().isEmpty()) {
+        if (media == null || media.getId() == 0 ) {
             String errorMsg = "Error: Invalid media object. Missing mediaId or fileName.";
             if (fileTransferListener != null) fileTransferListener.onFail(errorMsg);
             return new Response(false, errorMsg, null);
@@ -1103,13 +1113,22 @@ public class ChatClient implements AutoCloseable {
      * @param fileTransferListener The specific listener for this transfer.
      */
     private void receiveFileBytes(String transferId, String fileName, long fileSize, String saveDirectory, OnFileTransferListener fileTransferListener) {
-        File outputFile = new File(saveDirectory, fileName);
+        saveDirectory = saveDirectory.trim();
+        saveDirectory = saveDirectory.replace('\\', '/').replace("\u202A", "").replace("\u202B", "");
+        System.out.println("          OnMetod : reciveFileByte(\n" +
+                            "                             fileName:"+fileName+"\n" +
+                            "                              size   : "+fileSize+"\n" +
+                            "                              saveDirectory: "+ saveDirectory+"\n" +
+                            "                              );");
+        File outputFile = new File(saveDirectory +fileName);
         try {
             File saveDir = new File(saveDirectory);
             if (!saveDir.exists()) {
                 saveDir.mkdirs();
             }
-
+            if(!outputFile.exists()|| !outputFile.isFile()){
+                outputFile.createNewFile();
+            }
             try (Socket fileSocket = new Socket(SERVER_IP, FILE_TRANSFER_PORT);
                  InputStream is = fileSocket.getInputStream();
                  OutputStream os = fileSocket.getOutputStream(); // For sending transferId
@@ -1192,59 +1211,6 @@ public class ChatClient implements AutoCloseable {
      * In a real JavaFX application, you would typically initialize and register listeners
      * within your Application's start method or a controller.
      */
-    public static void main(String[] args) {
-        ChatClient client = ChatClient.getInstance();
-
-        // Example of adding listeners (these would be your JavaFX controller methods)
-        client.addOnCommandResponseListener(response ->
-                System.out.println("[CMD_RESP] Success=" + response.isSuccess() + ", Msg=" + response.getMessage()));
-        client.addOnNewMessageListener(message ->
-                System.out.println("[NEW_MSG] From " + message.getSenderId() + ": " + message.getContent()));
-        client.addOnLoginSuccessListener(user ->
-                System.out.println("[LOGIN_SUCCESS] Logged in as: " + user.getPhoneNumber()));
-        client.addOnConnectionFailureListener(error ->
-                System.err.println("[CONN_FAIL] " + error));
-        client.addOnStatusUpdateListener(status ->
-                System.out.println("[STATUS] " + status));
-        client.addOnMessagesRetrievedListener((messages, chatId) ->
-                System.out.println("[MSGS_RETRIEVED] Chat " + chatId + ": " + messages.size() + " messages."));
-        client.addOnChatRetrievedListener(chat ->
-                System.out.println("[CHAT_RETRIEVED] Chat Name: " + chat.getChatName() + ", ID: " + chat.getId()));
-        client.addOnUserRetrievedListener(user ->
-                System.out.println("[USER_RETRIEVED] User Name: " + user.getFirstName() + " " + user.getLastName() + ", Phone: " + user.getPhoneNumber()));
-
-        // Add other listeners as needed for testing
-
-        // Example usage (these calls would be triggered by JavaFX UI actions on background threads)
-        // new Thread(() -> {
-        //     Response loginResponse = client.login("your_phone_number", "your_password");
-        //     if (loginResponse.isSuccess()) {
-        //         // Now retrieve a chat by ID
-        //         client.getChatById(123); // Replace with a valid chat ID
-        //
-        //         // Now retrieve a user by phone number
-        //         client.getUserByPhoneNumber("1234567890"); // Replace with a valid phone number
-        //
-        //         // Now retrieve a user by ID
-        //         client.getUserById(456); // Replace with a valid user ID
-        //     }
-        // }).start();
-
-
-        // Keep the main thread alive for the listener thread to run.
-        // In a JavaFX app, the JavaFX Application thread would keep it alive.
-        try {
-            Thread.sleep(60000); // Keep alive for 60 seconds for demonstration
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        } finally {
-            try {
-                client.close();
-            } catch (Exception e) {
-                System.err.println("Error closing client: " + e.getMessage());
-            }
-        }
-    }
 
     public Gson getGson() {
         return this.gson;

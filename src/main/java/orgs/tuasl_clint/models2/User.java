@@ -88,7 +88,10 @@ public class User {
     public void setUpdatedAt(Timestamp updatedAt) { this.updatedAt = updatedAt; }
 
     public boolean save() throws SQLException {
-        String sql = "INSERT INTO users (phone_number, username, first_name, last_name, bio, profile_picture_url, hashed_password, two_factor_secret, last_seen_at, is_online, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        if(id > 0){
+            return save(id);
+        }
+        String sql = "INSERT INTO users ( phone_number, username, first_name, last_name, bio, profile_picture_url, hashed_password, two_factor_secret, last_seen_at, is_online, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, phoneNumber);
             statement.setString(2, username);
@@ -102,6 +105,34 @@ public class User {
             statement.setInt(10, isOnline ? 1 : 0);
             statement.setTimestamp(11, createdAt);
             statement.setTimestamp(12, updatedAt);
+
+            boolean isInserted = statement.executeUpdate() > 0;
+            if (isInserted) {
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        this.id = (generatedKeys.getLong(1));
+                    }
+                }
+            }
+            return isInserted;
+        }
+    }
+    public boolean save(long id) throws SQLException {
+        String sql = "INSERT INTO users ( phone_number, username, first_name, last_name, bio, profile_picture_url, hashed_password, two_factor_secret, last_seen_at, is_online, created_at, updated_at, id ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+        try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, phoneNumber);
+            statement.setString(2, username);
+            statement.setString(3, firstName);
+            statement.setString(4, lastName);
+            statement.setString(5, bio);
+            statement.setString(6, profilePictureUrl);
+            statement.setString(7, password);
+            statement.setString(8, twoFactorSecret);
+            statement.setTimestamp(9, lastSeenAt);
+            statement.setInt(10, isOnline ? 1 : 0);
+            statement.setTimestamp(11, createdAt);
+            statement.setTimestamp(12, updatedAt);
+            statement.setLong(13,id);
 
             boolean isInserted = statement.executeUpdate() > 0;
             if (isInserted) {
@@ -144,11 +175,11 @@ public class User {
     }
     public boolean saveOrUpdate(){
         try {
-            save();
+            update();
             return true;
         } catch (SQLException e) {
             try {
-                update();
+                save();
                 return true;
             } catch (SQLException ex) {
                 System.err.println("\n\n---------------Save Or Update------------- User: Error "+e.getMessage()+" : "+this.toString()+"");

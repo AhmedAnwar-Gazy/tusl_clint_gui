@@ -333,7 +333,7 @@ public class LoadItemController implements Initializable {
     @FXML private Label fileNameLabel;
     @FXML private HBox readyFileContainer;
 
-    private static final String FILES_ROOT_PATH = FilesHelper.getFilesRootPath();
+    private static final String FILES_ROOT_PATH = "src/main/resources/orgs/tuasl_clint/";//= FilesHelper.getFilesRootPath();
     private String FOLDER_FOR_MEDIA;
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
     private final Lock threadLock = new ReentrantLock();
@@ -436,14 +436,15 @@ public class LoadItemController implements Initializable {
                     buttonsContainer.getChildren().remove(downloadButton);
                     buttonsContainer.getChildren().add(cancelDownloadButton);
                 });
-
-                Response res = ChatClient.getInstance().getFileByMedia(
+                media.setFileName(media.getFilePathOrUrl());
+                System.out.println(ChatClient.getInstance().getFileByMedia(
                         media,
-                        FILES_ROOT_PATH + FOLDER_FOR_MEDIA + media.getFileName(),
+                        FILES_ROOT_PATH + FOLDER_FOR_MEDIA.substring(0,FOLDER_FOR_MEDIA.length()-1),
                         new OnFileTransferListener() {
                             @Override
                             public void onFail(String msg) {
                                 Platform.runLater(() -> {
+                                    System.out.println("------- An Error Occurred While Reciving The File Error Message Is : "+ msg);
                                     JOptionPane.showMessageDialog(null, msg);
                                     buttonsContainer.getChildren().add(downloadButton);
                                     buttonsContainer.getChildren().remove(cancelDownloadButton);
@@ -454,6 +455,7 @@ public class LoadItemController implements Initializable {
                             @Override
                             public void onProgress(long transferredBytes, long totalSize) {
                                 Platform.runLater(() -> {
+                                    System.out.println("------ FIle is download ...."+transferredBytes+" / "+totalSize);
                                     downloadProgressPar.setProgress((double) transferredBytes / totalSize);
                                     state = FileState.IS_ON_DOWNLOADING;
                                 });
@@ -481,7 +483,7 @@ public class LoadItemController implements Initializable {
                                 });
                             }
                         }
-                );
+                ).toString());
             } catch (Exception e) {
                 Platform.runLater(() -> {
                     JOptionPane.showMessageDialog(null, "Download failed: " + e.getMessage());
@@ -524,7 +526,7 @@ public class LoadItemController implements Initializable {
         });
 
         if (this.file == null || !this.file.exists()) {
-            this.file = new File(FilesHelper.getFilesPath(media) + media.getFilePathOrUrl());
+            this.file = new File(FilesHelper.getFilesPath(media) +  media.getFilePathOrUrl());
         }
     }
 
@@ -545,14 +547,14 @@ public class LoadItemController implements Initializable {
     }
 
     public void shutdown() {
-        executorService.shutdownNow();
-        try {
-            if (!executorService.awaitTermination(1, TimeUnit.SECONDS)) {
-                executorService.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            executorService.shutdownNow();
-            Thread.currentThread().interrupt();
-        }
+//        executorService.shutdownNow();
+//        try {
+//            if (!executorService.awaitTermination(1, TimeUnit.SECONDS)) {
+//                executorService.shutdownNow();
+//            }
+//        } catch (InterruptedException e) {
+//            executorService.shutdownNow();
+//            Thread.currentThread().interrupt();
+//        }
     }
 }

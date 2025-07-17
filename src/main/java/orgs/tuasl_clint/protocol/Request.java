@@ -4,6 +4,8 @@ package orgs.tuasl_clint.protocol;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import orgs.tuasl_clint.models2.Chat;
+import orgs.tuasl_clint.models2.ChatParticipant;
+import orgs.tuasl_clint.utils.ChatParticipantsRoleAdapter;
 import orgs.tuasl_clint.utils.ChatTypeAdapter;
 import orgs.tuasl_clint.utils.TimestampAdapter;
 import orgs.tuasl_clint.utils.LocalDateTimeAdapter;
@@ -21,6 +23,7 @@ public class Request {
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .registerTypeAdapter(Timestamp.class, new TimestampAdapter())
             .registerTypeAdapter(Chat.ChatType.class, new ChatTypeAdapter())
+            .registerTypeAdapter(ChatParticipant.ChatParticipantRole.class, new ChatParticipantsRoleAdapter())
             .serializeNulls()
             .create();
 

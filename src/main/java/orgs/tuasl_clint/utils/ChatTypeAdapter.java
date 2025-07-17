@@ -10,7 +10,6 @@ import java.time.format.DateTimeFormatter;
 
 public class ChatTypeAdapter implements JsonSerializer<Chat.ChatType>, JsonDeserializer<Chat.ChatType> {
 
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
     @Override
     public JsonElement serialize(Chat.ChatType src, Type typeOfSrc, JsonSerializationContext context) {
