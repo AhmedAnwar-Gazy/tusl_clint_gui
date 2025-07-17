@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" styleClass="root-pane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.SettingsController">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <padding>
+                <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+            </padding>
+
+            <Label styleClass="title-label" text="Settings">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+
+            <VBox alignment="CENTER_LEFT" maxWidth="400" spacing="10">
+                <Label styleClass="section-label" text="Notifications:" />
+                <CheckBox fx:id="enableNotificationsCheckbox" selected="true" text="Enable Desktop Notifications" />
+                <CheckBox fx:id="playSoundCheckbox" text="Play notification sound" />
+            </VBox>
+
+            <VBox alignment="CENTER_LEFT" maxWidth="400" spacing="10">
+                <Label styleClass="section-label" text="Appearance:" />
+                <Label text="(Theme options would go here)" />
+            </VBox>
+
+            <VBox alignment="CENTER_LEFT" maxWidth="400" spacing="10">
+                <Label styleClass="section-label" text="Account:" />
+                <Button onAction="#handleChangPasswordButton" styleClass="secondary-button" text="Change Password..." />
+                <Button onAction="#handleLogoutButton" styleClass="danger-button" text="Log Out" />
+            </VBox>
+
+            <Button fx:id="backButton" maxWidth="400" mnemonicParsing="false" onAction="#handleBackButtonAction" styleClass="action-button" text="Back to Chat" />
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="mainAllContainer" alignment="CENTER_LEFT" minWidth="200.0" onMouseClicked="#FileItemClicked" style="-fx-border-radius: 50%; -fx-border-color: black; -fx-background-color: #f0ffd3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.FileItemController">
+   <children>
+      <HBox fx:id="buttonsContainer" alignment="CENTER">
+         <HBox.margin>
+            <Insets left="8.0" />
+         </HBox.margin>
+         <children>
+            <Button fx:id="deleteItem" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#deleteItemHandler" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: red; -fx-border-radius: 100%;" text="X">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </Button>
+            <Button fx:id="openButton" mnemonicParsing="false" onAction="#openFileButtonClicked" />
+         </children>
+      </HBox>
+      <VBox>
+         <children>
+            <Label fx:id="fileNameLBL" text="File name">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </Label>
+            <HBox>
+               <children>
+                  <Label fx:id="fileSizeLBL" text="size">
+                     <HBox.margin>
+                        <Insets right="4.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="fileTypeLBL" text="type">
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootBorderPane" prefHeight="458.0" prefWidth="1028.0" style="-fx-max-height: 800px;" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.ChatController">
+    <left>
+        <VBox fx:id="leftMainAllContainer" spacing="5.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="5.0" />
+            </padding>
+         <VBox fx:id="chatsMainContainer" alignment="TOP_CENTER">
+            <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-header">
+                      <padding>
+                     <Insets bottom="5" left="10" right="10" top="5" />
+                  </padding>
+                      <Button fx:id="menuButton" onAction="#handleMenuButtonAction" style="-fx-background-color: #FF000000;" styleClass="menu-button">
+                          <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../icons/menuButton.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                  </Button> <TextField fx:id="searchTF" promptText="Search" style="-fx-background-radius: 20;-fx-border-radius: 15;" HBox.hgrow="ALWAYS" />
+                  </HBox>
+                  <ListView fx:id="chatListView" cacheShape="false" maxHeight="1.7976931348623157E308" scaleShape="false" styleClass="chat-list" />
+            </children>
+         </VBox>
+         <HBox fx:id="menuItemContainer" />
+        </VBox>
+    </left>
+    <center>
+        <BorderPane>
+            <top>
+                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="chat-header">
+                    <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                    </padding>
+                    <Label fx:id="chatTitleLabel" styleClass="chat-title" text="Chat Name" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="settingsButton" onAction="#handleSettingsButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+                        <graphic>
+                            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/settingButton.png" />
+                                </image>
+                            </ImageView>
+                        </graphic></Button>
+               <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="266.0" spacing="10.0">
+                  <padding>
+                     <Insets top="2.0" />
+                  </padding>
+                  <children>
+                     <Button fx:id="videoCallButton" onAction="#handleVideoCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+                        <graphic>
+                           <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/video_call.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="audioCallButton" onAction="#handleAudioCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+                        <graphic>
+                           <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/vois_call.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#handleAddParticipantButtonClicked">
+                        <graphic>
+                           <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                              <image>
+                                 <Image url="@../icons/Send%20icon_files/6711656.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                  </children>
+               </HBox>
+                </HBox>
+            </top>
+            <center>
+                <ScrollPane fx:id="messageScrollPane" fitToWidth="true" styleClass="message-area" BorderPane.alignment="CENTER">
+                    <content>
+                        <VBox fx:id="messageDisplayArea" spacing="10.0" style="-fx-background-image: url('images/img.png'); -fx-background-size: cover;">
+                            <padding><Insets bottom="10.0" left="15.0" right="15.0" top="10.0" /></padding>
+                            <Label fx:id="chatTitleLabel" text="Welcome to the chat!" wrapText="true" />
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </center>
+         <bottom>
+            <VBox id="message_media_shower" fx:id="main_message_input_container" maxHeight="-Infinity" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="message_media_selected_container" alignment="CENTER" maxHeight="96.0" VBox.vgrow="ALWAYS" />
+                      <HBox id="insertion_hbox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="419.0" spacing="5.0" styleClass="input-area">
+                          <padding>
+                              <Insets bottom="5.0" left="7.0" right="7.0" top="5.0" />
+                          </padding>
+                          <Button fx:id="shareButton" onAction="#handleShareButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+                              <graphic>
+                                  <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../icons/attachment.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <TextField fx:id="messageInputField" onAction="#handleSendButtonAction" prefHeight="39.0" promptText="Write a message..." style="-fx-background-radius: 20;" HBox.hgrow="ALWAYS" />
+
+                          <Button fx:id="emojiButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleEmojiButtonAction" prefHeight="15.0" prefWidth="30.0" style="-fx-background-color: #FF000000; -fx-background-radius: 50;">
+                              <graphic>
+                                  <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../icons/emoji.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <HBox.margin>
+                                  <Insets />
+                              </HBox.margin>
+                          </Button>
+                          <Button fx:id="sendVoiceButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#handleSendVoiceButtonPressed" onMouseReleased="#handleSendVoiceButtonReleased" prefHeight="46.0" prefWidth="44.0" style="-fx-background-color: #FF000000; -fx-background-radius: 50;">
+                              <graphic>
+                                  <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../icons/voiceButton.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                              <HBox.margin>
+                                  <Insets />
+                              </HBox.margin>
+                          </Button>
+                          <Button fx:id="sendButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleSendButtonAction" prefHeight="43.0" prefWidth="37.0" style="-fx-background-color: #FF000000; -fx-background-radius: 50;">
+                              <graphic>
+                                  <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../icons/tel.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </HBox>
+               </children>
+            </VBox>
+         </bottom>
+        </BorderPane>
+    </center>
+    <right>
+        <ScrollPane fx:id="emojiScrollPane" fitToWidth="true" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="250.0">
+            <content>
+                <FlowPane fx:id="areaOfEmojis" hgap="5.0" style="-fx-background-color: #f0f0f0; -fx-padding: 10;" vgap="5.0" />
+            </content>
+        </ScrollPane>
+    </right>
+</BorderPane>

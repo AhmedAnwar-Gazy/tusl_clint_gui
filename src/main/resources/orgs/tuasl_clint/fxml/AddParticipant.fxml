@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" styleClass="root-container" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"  fx:controller="orgs.tuasl_clint.controllers.AddParticipantController">
+<padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+</padding>
+<stylesheets>
+<!--    <String fx:value="@css/tailwind_fx.css" />-->
+</stylesheets>
+
+<!-- Inline CSS for Tailwind-like aesthetics -->
+<style>
+    .root-container {
+    -fx-background-color: #f8fafc; /* Tailwind gray-50 */
+    -fx-font-family: "Inter", sans-serif; /* Preferred font */
+    }
+    .header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b; /* Tailwind slate-800 */
+    -fx-padding: 0 0 10px 0;
+    }
+    .subheader-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b; /* Tailwind slate-500 */
+    -fx-padding: 0 0 15px 0;
+    }
+    .search-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1; /* Tailwind slate-300 */
+    -fx-border-radius: 8px; /* rounded-lg */
+    -fx-background-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 15px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #94a3b8; /* Tailwind slate-400 */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0.0, 0, 2); /* shadow-sm */
+    }
+    .list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0; /* Tailwind slate-200 */
+    -fx-border-radius: 8px; /* rounded-lg */
+    -fx-background-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0.0, 0, 4); /* shadow-md */
+    -fx-padding: 5px;
+    }
+    .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 15px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #334155; /* Tailwind slate-700 */
+    }
+    .list-cell:selected {
+    -fx-background-color: #e0f2fe; /* Tailwind blue-50 */
+    -fx-text-fill: #0c4a6e; /* Tailwind sky-800 */
+    }
+    .list-cell:hover {
+    -fx-background-color: #f0f9ff; /* Tailwind blue-50 */
+    }
+    .action-button {
+    -fx-background-color: #3b82f6; /* Tailwind blue-500 */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 25px;
+    -fx-background-radius: 8px; /* rounded-lg */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.0, 0, 5); /* shadow-lg */
+    -fx-cursor: hand;
+    }
+    .action-button:hover {
+    -fx-background-color: #2563eb; /* Tailwind blue-600 */
+    }
+    .action-button:pressed {
+    -fx-background-color: #1d4ed8; /* Tailwind blue-700 */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0.0, 0, 2); /* shadow-sm */
+    }
+    .feedback-label {
+    -fx-text-fill: #ef4444; /* Tailwind red-500 */
+    -fx-font-size: 13px;
+    -fx-padding: 5px 0 0 0;
+    }
+    .success-label {
+    -fx-text-fill: #22c55e; /* Tailwind green-500 */
+    -fx-font-size: 13px;
+    -fx-padding: 5px 0 0 0;
+    }
+</style>
+
+<Label styleClass="header-label" text="Add Participants" />
+<Label styleClass="subheader-label" text="Search for users to add to the group." />
+
+<TextField fx:id="searchTextField" promptText="Search by phone number, name, or ID" styleClass="search-field" VBox.vgrow="NEVER">
+    <VBox.margin>
+        <Insets bottom="10.0" />
+    </VBox.margin>
+</TextField>
+
+<ListView fx:id="userListView" prefHeight="300.0" prefWidth="360.0" styleClass="list-view" VBox.vgrow="ALWAYS" />
+
+<Label fx:id="feedbackLabel" styleClass="feedback-label" text="" wrapText="true" />
+
+<Button fx:id="addParticipantsButton" onAction="#handleAddParticipants" styleClass="action-button" text="Add Selected Participants" VBox.vgrow="NEVER">
+    <VBox.margin>
+        <Insets top="15.0" />
+    </VBox.margin>
+</Button>
+
+<!-- Optional: A label to show the current group name/ID if pre-selected -->
+<Label fx:id="groupInfoLabel" styleClass="subheader-label" text="To Group: [Group Name/ID]" visible="false" />
+
+</VBox>
