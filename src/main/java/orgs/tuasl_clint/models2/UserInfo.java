@@ -67,7 +67,7 @@ public class UserInfo {
                 System.out.println(true);
                 ResultSet rs = psmt.getGeneratedKeys();
                 if(rs.next())
-                    this.user_id = rs.getInt(0);
+                    this.user_id = rs.getInt(1);
                 return true;
             }else
             {

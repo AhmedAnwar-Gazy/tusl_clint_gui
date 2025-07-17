@@ -298,7 +298,7 @@ public class ChatController {
                 } catch (SQLException e) {
                     System.err.println("-------cannot get this chat participles...!!!\n------Error Message is : "+ e.getMessage());
                 }
-                loadChatsMessages(newSelection);                // --- NEW CODE: Populate messageDisplayArea directly after loading messages ---
+//                loadChatsMessages(newSelection);                // --- NEW CODE: Populate messageDisplayArea directly after loading messages ---
                 for (Message message : messageItemsMessage) {
                     loadMessages(message);
                 }
@@ -1004,4 +1004,7 @@ public class ChatController {
     }
 
 
+    public void handleAddParticipantButtonClicked(ActionEvent event) {
+
+    }
 }

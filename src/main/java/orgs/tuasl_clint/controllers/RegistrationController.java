@@ -61,7 +61,7 @@ public class RegistrationController {
                 User newUser = new User("@"+username,phone,password);
                 newUser.setFirstName(firstName);
                 newUser.setLastName(lastName);
-                Response res =  ChatClient.getInstance().register(newUser);
+                Response res =  ChatClient.getInstance().register(newUser.getPhoneNumber(),newUser.getPassword(),newUser.getFirstName(),newUser.getLastName());
                 if(res != null && res.isSuccess()){
                     registerMessage.setText("Success Create an Account You Can now Sign in");
                     User u = new User("@"+username,phone,password);

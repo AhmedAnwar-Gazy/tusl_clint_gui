@@ -73,10 +73,14 @@ public class LoginController implements Initializable {
         Response response = ChatClient.getInstance().login(phone,password);
         if(response != null && response.isSuccess()){
             User userFromServer = ChatClient.getInstance().getGson().fromJson(response.getData(),User.class);
+
             if(areEqalsUsers(userFromDb,userFromServer)){
+                User.user = userFromDb;
                 sucessLogin();
             }else {
                 DatabaseConnectionSQLite.DeleteData();
+                userFromServer.setPassword(password);
+                User.user = userFromServer;
                 sucessLogin();
             }
         }else {
