@@ -149,4 +149,17 @@ public class Message {
                 ", media=" + (media != null ? media.toString() : "null") +
                 '}';
     }
+
+    public void saveOrUpdate() {
+        try {
+            save();
+        } catch (SQLException e) {
+            try {
+                update();
+            } catch (SQLException ex) {
+                System.out.println("----- Cannot Save Or Update Messsage : "+ toString());
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -124,15 +124,24 @@ public class ChatController {
             this.chatMap.put(chat.getId(),chat);
             chatsMessagesMap.put(chat,FXCollections.observableArrayList());
             chatsParticipantsMap.put(chat,FXCollections.observableArrayList());
+            chatListView.getItems().add(chat);
             chat.saveOrUpdate();
         }
     }
     public void addnewMessage(Message message){
         if(chatMap.containsKey(message.getChatId())){
-            chatsMessagesMap.get(chatMap.get(message.getChatId())).add(message);
-            if(currentChat == chatMap.get(message.getChatId())){
-                loadMessages(message);
+            if(!chatsMessagesMap.get(chatMap.get(message.getChatId())).contains(message)){
+                chatsMessagesMap.get(chatMap.get(message.getChatId())).add(message);
+                if(currentChat == chatMap.get(message.getChatId())){
+                    loadMessages(message);
+                }else {
+                    chatChatListItemControllerHashMap.get(chatMap.get(message.getChatId())).updateLastMessage(message);
+                    chatChatListItemControllerHashMap.get(chatMap.get(message.getChatId())).setUnreadCount(chatChatListItemControllerHashMap.get(chatMap.get(message.getChatId())).getUnreadMessagesCount()+1);
+                }
+
             }
+        }else {
+            ChatClient.getInstance().getChatById(message.getChatId().intValue());
         }
     }
 
@@ -167,6 +176,73 @@ public class ChatController {
         getChatsFromDB();// finish
         getParticipantsFromDB();// finish
 
+
+        ChatClient.getInstance().addOnAllUsersRetrievedListener( users -> {
+            users.forEach(user ->{
+                if(!userMap.containsKey(user.getId())){
+                    userMap.put(user.getId(),user);
+                    user.saveOrUpdate();
+                }
+            });
+        });
+        ChatClient.getInstance().addOnUserChatsRetrievedListener(chats -> {
+            chats.forEach(chat -> {
+                if (!chatMap.containsKey(chat)) {
+                    addChatItem(chat);
+                    notifyNewChatRetrived(chat);
+                    ChatClient.getInstance().getChatMessages((int)chat.getId(),50,0);
+                    ChatClient.getInstance().getChatParticipants((int)chat.getId());
+                }
+            });
+        });
+        ChatClient.getInstance().addOnChatParticipantsRetrievedListener((participants, chatId) -> {
+            participants.forEach(p ->{
+                if(chatMap.containsKey(chatId)){
+                    chatsParticipantsMap.get(chatMap.get(chatId)).add(p);
+                }else {
+                    Thread.yield();
+                    if(chatMap.containsKey(chatId)) {
+                        chatsParticipantsMap.get(chatMap.get(chatId)).add(p);
+                    }
+                }
+            });
+        });
+        ChatClient.getInstance().addOnChatRetrievedListener(this::addChatItem);
+        ChatClient.getInstance().addOnCommandResponseListener(response -> {
+            //TODO SEE FOR THIS RESPONSE
+        });
+        ChatClient.getInstance().addOnConnectionFailureListener(errorMessage -> {
+            System.out.println("----- Connection Fail..!!! Error MSG: "+errorMessage);
+            exit(2);
+        });
+        ChatClient.getInstance().addOnMessagesRetrievedListener((messages, chatId) -> {
+            if(chatMap.containsKey(chatId)){
+                ChatClient.getInstance().getChatById(chatId);
+            }
+            messages.forEach(message -> {
+                if(!chatsMessagesMap.containsKey(chatMap.get(chatId))){
+                    chatsMessagesMap.put(chatMap.get(chatId),FXCollections.observableArrayList());
+                }
+                if(!chatsMessagesMap.get(chatMap.get(chatId)).contains(message)){
+                    addnewMessage(message);
+                    try {
+                        message.save();
+                    } catch (SQLException e) {
+                        System.out.println("----- Error Cannot Save The New Message : "+message.toString());
+                    }
+                }
+
+
+            });
+        });
+        ChatClient.getInstance().addOnUserRetrievedListener(user -> {
+            if(!userMap.containsKey(user.getId())){
+                user.saveOrUpdate();
+                userMap.put(user.getId(),user);
+            }
+        });
+        // TODO check adding the participants from the the server and Messages
+
         new Runnable() {
             @Override
             public void run() {
@@ -174,39 +250,11 @@ public class ChatController {
                 ChatClient.getInstance().getUserChats();
             }
         }.run();
-
-        ChatClient.getInstance().addOnAllUsersRetrievedListener( users -> {
-            new Runnable() {
-                @Override
-                public void run() {
-                    users.forEach(user ->{
-                        if(!userMap.containsKey(user.getId())){
-                            userMap.put(user.getId(),user);
-                            user.saveOrUpdate();
-                        }
-                    });
-                }
-            }.run();
-        });
-        ChatClient.getInstance().addOnUserChatsRetrievedListener(chats -> {
-            new Runnable(){
-                @Override
-                public void run() {
-                    chats.forEach(chat -> {
-                        if (!chatMap.containsKey(chat)) {
-                            addChatItem(chat);
-                            ChatClient.getInstance().getChatMessages((int)chat.getId(),50,0);
-                            ChatClient.getInstance().getChatParticipants((int)chat.getId());
-                        }
-                    });
-                }
-            }.run();
-        });
-
-        // TODO check adding the participants from the the server and Messages
-
     }
 
+    private void notifyNewChatRetrived(Chat chat) {
+
+    }
 
 
     private void getParticipantsFromDB() {

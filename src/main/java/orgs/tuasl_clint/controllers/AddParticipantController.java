@@ -5,11 +5,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import org.example.client.ChatClient;
-import org.example.client.OnAllUsersRetrievedListener;
-import org.example.client.OnCommandResponseListener;
-import org.example.client.OnUserRetrievedListener;
-import org.example.protocol.Response;
+import orgs.tuasl_clint.client.ChatClient;
+import orgs.tuasl_clint.client.OnAllUsersRetrievedListener;
+import orgs.tuasl_clint.client.OnCommandResponseListener;
+import orgs.tuasl_clint.client.OnUserRetrievedListener;
+import orgs.tuasl_clint.protocol.Response;
 import orgs.tuasl_clint.models2.User;
 
 import java.net.URL;
@@ -102,7 +102,7 @@ public class AddParticipantController implements Initializable,
         for (User user : selectedUsers) {
             new Thread(() -> {
                 // Default role can be "member" or based on UI selection
-                Response response = chatClient.addChatParticipant(targetChatId, user.getId(), "member");
+                Response response = chatClient.addChatParticipant(targetChatId,(int) user.getId(), "member");
                 // The onCommandResponse listener will handle feedback
             }).start();
         }

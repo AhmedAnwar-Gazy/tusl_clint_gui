@@ -11,11 +11,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import org.example.client.*;
-import org.example.model.Chat;
-import org.example.model.ChatParticipant;
-import org.example.model.User;
-import org.example.protocol.Response;
+import orgs.tuasl_clint.client.*;
+import orgs.tuasl_clint.models2.Chat;
+import orgs.tuasl_clint.models2.ChatParticipant;
+import orgs.tuasl_clint.models2.User;
+import orgs.tuasl_clint.protocol.Response;
 
 import java.awt.*;
 import java.io.IOException;
@@ -119,7 +119,7 @@ public class GroupInfoController implements Initializable,
 
 
             // Fetch participants
-            new Thread(() -> chatClient.getChatParticipants(group.getId())).start();
+            new Thread(() -> chatClient.getChatParticipants((int) group.getId())).start();
         }
     }
 
@@ -141,8 +141,8 @@ public class GroupInfoController implements Initializable,
                 .filter(p -> p.getUserId() == currentUser.getId())
                 .findFirst();
 
-        boolean isAdmin = userParticipant.map(p -> "admin".equalsIgnoreCase(p.getRole()) || "creator".equalsIgnoreCase(p.getRole())).orElse(false);
-        boolean isCreator = userParticipant.map(p -> "creator".equalsIgnoreCase(p.getRole())).orElse(false);
+        boolean isAdmin = userParticipant.map(p -> "admin".equalsIgnoreCase(String.valueOf(p.getRole())) || "creator".equalsIgnoreCase(String.valueOf(p.getRole()))).orElse(false);
+        boolean isCreator = userParticipant.map(p -> "creator".equalsIgnoreCase(String.valueOf(p.getRole()))).orElse(false);
         boolean isMember = userParticipant.isPresent();
 
         // Enable/disable based on general membership
@@ -207,7 +207,7 @@ public class GroupInfoController implements Initializable,
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             new Thread(() -> {
-                Response response = chatClient.removeChatParticipant(currentGroup.getId(), currentUser.getId());
+                Response response = chatClient.removeChatParticipant((int) currentGroup.getId(), (int) currentUser.getId());
                 Platform.runLater(() -> {
                     if (response.isSuccess()) {
                         feedbackLabel.setText("Successfully left the group.");
@@ -235,7 +235,7 @@ public class GroupInfoController implements Initializable,
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             new Thread(() -> {
-                Response response = chatClient.deleteChat(currentGroup.getId());
+                Response response = chatClient.deleteChat((int) currentGroup.getId());
                 Platform.runLater(() -> {
                     if (response.isSuccess()) {
                         feedbackLabel.setText("Group deleted successfully.");
@@ -258,7 +258,7 @@ public class GroupInfoController implements Initializable,
                 // Check if Desktop is supported before trying to open
                 if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
                     Desktop.getDesktop().browse(new URI(link));
-                    notifyStatusUpdate("Opened public link: " + link);
+                    chatClient.notifyStatusUpdate("Opened public link: " + link);
                 } else {
                     feedbackLabel.setText("Cannot open link: Desktop browsing not supported.");
                     feedbackLabel.getStyleClass().setAll("feedback-label");
@@ -295,7 +295,7 @@ public class GroupInfoController implements Initializable,
                 // If a participant was added/removed, refresh the list
                 if (response.getMessage().contains("Participant added") || response.getMessage().contains("Participant removed")) {
                     if (currentGroup != null) {
-                        new Thread(() -> chatClient.getChatParticipants(currentGroup.getId())).start();
+                        new Thread(() -> chatClient.getChatParticipants((int) currentGroup.getId())).start();
                     }
                 }
             } else {

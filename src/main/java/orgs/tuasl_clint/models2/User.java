@@ -144,18 +144,18 @@ public class User {
     }
     public boolean saveOrUpdate(){
         try {
-            if(id == 0){
-                return save();
-            }else {
-                User u = UserFactory.findById(this.id);
-                u = this;
-                return update();
-            }
+            save();
+            return true;
         } catch (SQLException e) {
-            System.err.println("\n\n---------------Save Or Update------------- User: Error "+e.getMessage()+" : "+this.toString()+"");
-            e.printStackTrace();
-            System.out.println("\n\n");
-            return false;
+            try {
+                update();
+                return true;
+            } catch (SQLException ex) {
+                System.err.println("\n\n---------------Save Or Update------------- User: Error "+e.getMessage()+" : "+this.toString()+"");
+                e.printStackTrace();
+                System.out.println("\n\n");
+                return false;
+            }
         }
     }
     @Override

@@ -81,6 +81,10 @@ public class ChatListItemController implements Initializable {
 //        this.nameLabel.setText("Chat Name Label");
     }
 
+    public int getUnreadMessagesCount() {
+        return this.unreadCount.get();
+    }
+
     private interface OnImageItemClickedListener{
         public void onImageItemClicked(Chat chat,ChatListItemController controller);
     }

@@ -243,7 +243,7 @@ public class ChatClient implements AutoCloseable {
         System.err.println("[Connection Failure]: " + errorMessage); // Fallback to console for critical errors
     }
 
-    private void notifyStatusUpdate(String status) {
+    public void notifyStatusUpdate(String status) {
         statusUpdateListeners.forEach(l -> l.onStatusUpdate(status));
         System.out.println("[Status Update]: " + status); // Fallback to console for general status
     }
