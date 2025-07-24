@@ -3,7 +3,10 @@ package orgs.tuasl_clint.utils.BackendThreadManager;
 import javafx.application.Platform;
 import javafx.beans.Observable;
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableMap;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -442,6 +445,26 @@ public class DataModel implements
 
                 // Initialize chat properties
                 ObjectProperty<ChatProperties> props = new SimpleObjectProperty<>(new ChatProperties());
+
+                props.get().messages.addListener(new ChangeListener<ObservableMap<Long, ObjectProperty<Message>>>() {// Binding the new maps of message and message controller map
+                    @Override
+                    public void changed(ObservableValue<? extends ObservableMap<Long, ObjectProperty<Message>>> observableValue, ObservableMap<Long, ObjectProperty<Message>> oldMap, ObservableMap<Long, ObjectProperty<Message>> newMap) {
+                        newMap.forEach((key,value)->{
+                            if(!props.get().sentMessageControllers.containsKey(key)){
+                                var task = DataModel.createSendMessageItemController(value.get());
+                                task.setOnSucceeded(abc->{
+                                    if(task.getValue() != null){
+                                        props.get().sentMessageControllers.put(key,new SimpleObjectProperty<>(task.getValue()));
+                                    }
+                                    else
+                                        soutt("Cannot Bind The messages map into messages controllers map using the value of message : "+value.get().toString());
+                                });
+                                Executor.submit(task);
+                            }
+                        });
+                    }
+                });
+
                 chatProperties.put(chatId, props);
                 Executor.execute(()->ChatClient.getInstance().getChatMessages(chatId.intValue(),50,0));
                 // Create controller asynchronously
@@ -542,6 +565,10 @@ public class DataModel implements
         return new SimpleMapProperty<>();
     }
 
+    public void setNewMessageReceivedListener(OnNewMessageListener newMessageReceivedListener) {
+        this.newMessageReceivedListener = newMessageReceivedListener;
+    }
+
     public void addMessageToChat(Message message) {
         long startTime = System.currentTimeMillis();
         String operation = "Add Message to Chat";
@@ -586,6 +613,10 @@ public class DataModel implements
                 // Create controller asynchronously
                 Task<SendMessageItemController> task = createSendMessageItemController(message);
                 task.setOnSucceeded(e -> {
+                    if(task.getValue() != null){
+                        if(newMessageReceivedListener != null)
+                            newMessageReceivedListener.onNewMessageReceived(message);
+                    }
                     props.get().sentMessageControllers.put(
                             message.getId(),
                             new SimpleObjectProperty<>(task.getValue())
@@ -609,21 +640,15 @@ public class DataModel implements
             recordPerformance(operation, duration);
         }
     }
+    private OnNewMessageListener newMessageReceivedListener;
+
     public ObjectProperty<SendMessageItemController> getSendMessageItemControllerOf(Message message){
         if(message == null || !chats.containsKey(message.getChatId()))
             return null;
         else if (chatProperties.get(message.getChatId()).get().sentMessageControllers.containsKey(message.getId())){
             return chatProperties.get(message.getChatId()).get().sentMessageControllers.get(message.getId());
-        }else if(chatProperties.get(message.getChatId()).get().messages.containsKey(message.getId())){
-            var task = createSendMessageItemController(message);
-            task.setOnSucceeded(workerStateEvent -> {
-                if(task.getValue() != null){
-                    chatProperties.get(message.getChatId()).get().sentMessageControllers.put(message.getId(),new SimpleObjectProperty<>(task.getValue()));
-                }
-                else soutt("Cannot Crate Send Message Item Controller Of Message : "+ message.toString());
-            });
-            Executor.submit(task);
         }
+
         return null;
     }
     public MapProperty<Long,ObjectProperty<SendMessageItemController>> getSendMessageItemControllers(Long chat_id){

@@ -204,3 +204,22 @@
 [2025-07-24 20:04:25.693] Chat not found: 19
 [2025-07-24 20:04:25.695] Chat not found: 14
 [2025-07-24 20:04:43.035] DataModel initialized
+[2025-07-25 00:06:20.453] DataModel initialized
+[2025-07-25 00:09:04.462] DataModel initialized
+[2025-07-25 00:09:05.156] Chat not found: 18
+[2025-07-25 00:16:58.477] DataModel initialized
+[2025-07-25 00:16:59.244] Chat not found: 2
+[2025-07-25 00:18:37.165] DataModel initialized
+[2025-07-25 00:33:52.697] DataModel initialized
+[2025-07-25 00:33:53.335] Chat not found: 8
+[2025-07-25 00:33:53.336] Chat not found: 8
+[2025-07-25 00:33:53.337] Chat not found: 8
+[2025-07-25 00:37:46.616] DataModel Performance Report:
+Add Message to Chat                     : Executions: 37, Avg: 1.43 ms, Max: 6 ms
+Add/Update Chat                         : Executions: 10, Avg: 1.10 ms, Max: 9 ms
+Create SendMessageItemController        : Executions: 102, Avg: 31.69 ms, Max: 304 ms
+Create ChatListItemController           : Executions: 24, Avg: 39.46 ms, Max: 118 ms
+Add Multiple Chats                      : Executions: 1, Avg: 12.00 ms, Max: 12 ms
+Add/Update User                         : Executions: 27, Avg: 0.22 ms, Max: 2 ms
+
+[2025-07-25 00:37:46.617] DataModel shutdown completed

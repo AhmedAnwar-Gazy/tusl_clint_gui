@@ -2,9 +2,12 @@ package orgs.tuasl_clint.controllers;
 
 import javafx.application.Platform;
 import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableObjectValue;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +26,7 @@ import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import orgs.tuasl_clint.client.ChatClient;
 import orgs.tuasl_clint.client.OnFileTransferListener;
+import orgs.tuasl_clint.client.OnNewMessageListener;
 import orgs.tuasl_clint.livecall.AudioCallWindow;
 import orgs.tuasl_clint.livecall.AudioReceiverUDP;
 import orgs.tuasl_clint.livecall.AudioSendUDP;
@@ -43,10 +47,9 @@ import java.net.URL;
 import java.nio.file.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.ResourceBundle;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
@@ -183,11 +186,10 @@ public class ChatController{
             m.setMessageType(FilesHelper.fileType.TEXT.name().toLowerCase());
             try {
                 if (m.save()) {
-                    System.out.println("@@@@@@=----- ["+Thread.currentThread().getName()+"] : ----- ["+Thread.currentThread().getName()+"] : ---sending text message");
+                    soutt("----- ["+Thread.currentThread().getName()+"] : ----- ["+Thread.currentThread().getName()+"] : ---sending text message");
                     Response res = ChatClient.getInstance().sendTextMessage((int) currentChat.get().getId(), m.getContent());
                     if (res.isSuccess()) {
                         messageInputField.clear();
-//                        loadMessages(m);
                     } else {
                         JOptionPane.showMessageDialog(null, "Cannot send the  Message Error : " + res.getMessage());
                     }
@@ -551,6 +553,16 @@ public class ChatController{
     private final DataModel dataModel = DataModel.getInstance();
 
     public void initialize() {
+        dataModel.setNewMessageReceivedListener(new OnNewMessageListener() {
+            @Override
+            public void onNewMessageReceived(Message message) {
+                if(currentChat.get().getId() == message.getChatId()){
+                    var controller = dataModel.getSendMessageItemControllerOf(message);
+                    if(controller != null && controller.get() != null)
+                        messageDisplayArea.getChildren().add(controller.get().getView());
+                }
+            }
+        });
         setupChatsList();
         setupCurrentChatBinding();
         setupMessagesBinding();
@@ -617,53 +629,42 @@ public class ChatController{
             }
 
             messages.clear(); // Clear previous chat's messages
-            messageDisplayArea.getChildren().setAll(dataModel.getSendMessageItemControllers(newChat.getId()).values().stream().map(s -> s.get().getView()).toList());
-
+//            messageDisplayArea.getChildren().setAll(dataModel.getSendMessageItemControllers(newChat.getId()).values().stream().map(s -> s.get().getView()).toList());
             if (newChat != null) {
                 // 2. Get current chat's message map
                 currentMessageMap = dataModel.getMessages(newChat.getId());
                 messages.setAll(currentMessageMap.values());
-
                 // 3. Create new listener
                 activeMapListener = change -> {
                     if (change.wasAdded()) messages.add(change.getValueAdded());
                     if (change.wasRemoved()) messages.remove(change.getValueRemoved());
                 };
-
                 currentMessageMap.addListener(activeMapListener);
             }
         });
     }
 
     private void setupMessageDisplay() {
-        // ربط الرسائل بمنطقة العرض
-        messages.addListener((ListChangeListener<ObjectProperty<Message>>) change -> {
-            while (change.next()){
-//                soutt("Messages List Changed To : "+ messages);
-//                if(change.wasAdded()){
-//                    soutt("Adding new Values To Messages List As : "+change.getAddedSubList().size());
-//                    change.getAddedSubList().forEach(messageObjectProperty -> {
-//                        var task = DataModel.createSendMessageItemController(messageObjectProperty.get());
-//                        task.setOnSucceeded(abc->{
-//                            var controller = task.getValue();
-//                            if(controller != null )
-//                                messageDisplayArea.getChildren().add(controller.getView());
-//                            else {
-//                                soutt("Cannot Create Message List Item For Message : "+messageObjectProperty.get().toString());
-//                            }
-//                        });
-//                        Executor.submit(task);
-//                    });
-//                }else if(change.wasRemoved()){
-//                    soutt("Removing Messages From Messages List , Remove : "+change.getRemoved().size());
-//                    soutt("Removing Rang ["+change.getFrom()+","+change.getTo()+"] .................");
-//                }else if(change.wasReplaced()) {
-//                    messageDisplayArea.getChildren().clear();
-//                    for (ObjectProperty<Message> msgProp : messages) {
-//                        ObjectProperty<SendMessageItemController> controllerObjectProperty = dataModel.getSendMessageItemControllerOf(msgProp.get());
-//                        messageDisplayArea.getChildren().add(controllerObjectProperty.get().getView());
-//                    }
-//                }
+        messages.addListener(new ListChangeListener<ObjectProperty<Message>>() {
+            @Override
+            public void onChanged(Change<? extends ObjectProperty<Message>> change) {
+                while (change.next()){
+                    if(change.wasAdded()){
+                        change.getAddedSubList().forEach(item->{
+                            var controller = dataModel.getSendMessageItemControllerOf(item.get());
+                            if(controller != null && controller.get() != null){
+                                messageDisplayArea.getChildren().add(controller.get().getView());
+                            }
+                        });
+                    }
+                    if(change.wasRemoved()){
+                        change.getRemoved().forEach(item->{
+                            var controller = dataModel.getSendMessageItemControllerOf(item.get());
+                            if(controller != null && controller.get() != null)
+                                messageDisplayArea.getChildren().remove(controller.get().getView());
+                        });
+                    }
+                }
             }
         });
     }
