@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox fx:id="HboxAllProfile" alignment="CENTER_LEFT" maxHeight="65.0" prefHeight="12.0" prefWidth="192.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.ChatListItemController">
+<HBox fx:id="HboxAllProfile" alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="194.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.ChatListItemController">
     <padding>
         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
     </padding>
@@ -55,7 +55,7 @@
             <Insets />
          </VBox.margin>
       </Label>
-        <Label fx:id="lastMessageLabel" text="Last message snippet..." textFill="#616161">
+        <Label fx:id="lastMessageLabel" maxWidth="112.0" text="Last message snippet..." textFill="#616161">
             <font>
                 <Font size="10.0" />
             </font>

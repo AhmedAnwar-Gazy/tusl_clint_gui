@@ -274,9 +274,9 @@ public class GroupInfoController implements Initializable,
     // --- ChatClientListener Implementations ---
 
     @Override
-    public void onChatParticipantsRetrieved(List<ChatParticipant> participants, int chatId) {
+    public void onChatParticipantsRetrieved(List<ChatParticipant> participants) {
         // Ensure this update is for the current group
-        if (currentGroup != null && chatId == currentGroup.getId()) {
+        if (currentGroup != null) {
             Platform.runLater(() -> {
                 groupParticipants.clear();
                 groupParticipants.addAll(participants);
@@ -321,6 +321,7 @@ public class GroupInfoController implements Initializable,
             System.out.println("[Status]: " + status);
         });
     }
+
 
     // Implement other listeners if needed (e.g., OnNewMessageListener if this page should show incoming messages)
 }

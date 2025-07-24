@@ -117,7 +117,7 @@ public class MessageFactory {
 
     public static List<Message> findReplies(Long originalMessageId) throws SQLException {
         String sql = "SELECT m.*, u.first_name AS sender_name FROM messages m " +
-                "JOIN users u ON m.sender_user_id = u.user_id " +
+                "Left JOIN users u ON m.sender_user_id = u.user_id " +
                 "WHERE m.replied_to_message_id = ? ORDER BY m.sent_at DESC";
         List<Message> messages = new ArrayList<>();
         try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql)) {
@@ -127,6 +127,22 @@ public class MessageFactory {
                     messages.add(createFromResultSet(rs));
                 }
             }
+        }
+        return messages;
+    }
+
+    public static List<Message> getAll() {
+        String sql = "SELECT m.*, u.first_name AS sender_name FROM messages m " +
+            "Left JOIN users u ON m.sender_user_id = u.user_id ORDER BY m.sent_at DESC";
+        List<Message> messages = new ArrayList<>();
+        try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql)) {
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    messages.add(createFromResultSet(rs));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("----- ["+Thread.currentThread().getName()+"][MessageFactory] : Cannot Get All Messages Error : "+e.getMessage());
         }
         return messages;
     }

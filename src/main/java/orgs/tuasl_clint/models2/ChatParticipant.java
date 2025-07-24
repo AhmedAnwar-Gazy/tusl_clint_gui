@@ -111,18 +111,19 @@ public class ChatParticipant {
             return statement.executeUpdate() > 0;
         }
     }
+
     @Override
     public String toString() {
         return "ChatParticipant{" +
-                "chatParticipantId=" + id +
-                ", chatId=" + chatId +
-                ", userId=" + userId +
-                ", role=" + (role != null ? role.name() : "null") +
-                ", joinedAt=" + joinedAt +
-                ", mutedUntil=" + mutedUntil +
-                ", isPinned=" + isPinned +
-                ", unreadCount=" + unreadCount +
-                ", lastReadMessageId=" + lastReadMessageId +
-                '}';
+            "id=" + id +
+            ", chatId=" + chatId +
+            ", userId=" + userId +
+            ", role=" + role +
+            ", joinedAt=" + joinedAt +
+            ", mutedUntil=" + mutedUntil +
+            ", isPinned=" + isPinned +
+            ", unreadCount=" + unreadCount +
+            ", lastReadMessageId=" + lastReadMessageId +
+            '}';
     }
 }

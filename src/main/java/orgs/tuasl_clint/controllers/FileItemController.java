@@ -1,5 +1,6 @@
 package orgs.tuasl_clint.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,6 +37,7 @@ public class FileItemController implements Initializable {
     @FXML
     private Label fileTypeLBL;
 
+
     @FXML
     void deleteItemHandler(ActionEvent event) {
         this.deleteItem();
@@ -44,7 +46,7 @@ public class FileItemController implements Initializable {
     @FXML
     void openFileButtonClicked(ActionEvent event) {
         if(action != null){
-            action.OnClickItem();
+            action.OnItemClickedAction();
         }
         try {
             Desktop.getDesktop().open(file);
@@ -61,9 +63,9 @@ public class FileItemController implements Initializable {
     }
 
     public interface Action{
-        public void OnActionDelete();
-        public void OnActionCleared();
-        public void OnClickItem();
+        public void OnDeleteAction();
+        public void OnClearedAction();
+        public void OnItemClickedAction();
     }
     public Action action;
 
@@ -71,7 +73,7 @@ public class FileItemController implements Initializable {
         this.state = State.NEW;
     }
 
-    public void setFile(File file, Action StateChangedActions){
+    public FileItemController setFile(File file, Action StateChangedActions){
         if(file != null){
             this.file = file;
             this.fileNameLBL.setText(file.getName());
@@ -79,6 +81,7 @@ public class FileItemController implements Initializable {
             this.fileTypeLBL.setText(FilesHelper.getFileExtension(file));
         }
         this.action = StateChangedActions;
+        return this;
     }
     public File getFile(){
         return this.file;
@@ -87,36 +90,39 @@ public class FileItemController implements Initializable {
     public void clear(){
         this.state = State.CLEARED;
         if(this.action != null){
-            action.OnActionCleared();
+            action.OnClearedAction();
         }
         this.file = null;
-        Button deleteButton = this.deleteItem;
-        HBox itemContainer = (HBox) deleteButton.getParent();
-        HBox itemsParentContainer = (HBox) itemContainer.getParent();
-        if(itemsParentContainer != null)
-            itemsParentContainer.getChildren().clear();
+        Platform.runLater(()->{
+            Button deleteButton = this.deleteItem;
+            HBox itemContainer = (HBox) deleteButton.getParent();
+            HBox itemsParentContainer = (HBox) itemContainer.getParent();
+            if(itemsParentContainer != null)
+                itemsParentContainer.getChildren().clear();
+        });
     }
     public void deleteItem(){
-        try {
-            this.state = State.DELETED;
-            HBox itemsParentContainer = (HBox) mainAllContainer.getParent();
-            itemsParentContainer.getChildren().clear();
-
-        } catch (ClassCastException | NullPointerException e) {
-            System.err.println("Error deleting item: " + e.getMessage());
-        }
-        if(action != null)
-            action.OnActionDelete();
+        this.state = State.DELETED;
+        Platform.runLater(()->{
+            try {
+                HBox itemsParentContainer = (HBox) mainAllContainer.getParent();
+                itemsParentContainer.getChildren().clear();
+            } catch (ClassCastException | NullPointerException e) {
+                System.err.println("Error deleting item: " + e.getMessage());
+            }
+            if(action != null)
+                action.OnDeleteAction();
+        });
     }
     public void desableCloseButton(){
-        this.deleteItem.setVisible(false);
+        Platform.runLater(()->deleteItem.setVisible(false));
     }
     public void enableCloseButton(){
-        this.deleteItem.setVisible(true);
+        Platform.runLater(()->deleteItem.setVisible(true));
     }
 
     public enum State{CLOSED,CLEARED,DELETED,NEW}
-    private State state;
+    private State state ;
 
     public State getState(){
         return this.state;
@@ -125,7 +131,7 @@ public class FileItemController implements Initializable {
     void FileItemClicked(MouseEvent event) {
         System.out.println("FileItem clicked");
         if(action != null){
-            action.OnClickItem();
+            action.OnItemClickedAction();
         }
     }
 }

@@ -29,7 +29,9 @@ public class ChatClient implements AutoCloseable {
     // Singleton instance
     private static ChatClient instance;
 
-    private static final String SERVER_IP = "192.168.1.99"; // Localhost
+    private static final String SERVER_IP = "127.0.0.1"; // Localhost
+//    private static final String SERVER_IP = "3.83.141.156"; // Localhost
+//    private static final String SERVER_IP = "192.168.1.99"; // Localhost
     private static final int SERVER_PORT = 6373;
     private static final int FILE_TRANSFER_PORT = 6374;
 
@@ -50,7 +52,7 @@ public class ChatClient implements AutoCloseable {
     private User currentUser;
 
     // BlockingQueue to hold responses from the server for synchronous command processing
-    private final BlockingQueue<Response> responseQueue = new LinkedBlockingQueue<>();
+    public final BlockingQueue<Response> responseQueue = new LinkedBlockingQueue<>();
 
     // --- Specialized Listener Lists ---
     private final List<OnCommandResponseListener> commandResponseListeners = Collections.synchronizedList(new ArrayList<>());
@@ -232,8 +234,8 @@ public class ChatClient implements AutoCloseable {
         notificationsRetrievedListeners.forEach(l -> l.onNotificationsRetrieved(notifications));
     }
 
-    private void notifyChatParticipantsRetrieved(List<ChatParticipant> participants, int chatId) {
-        chatParticipantsRetrievedListeners.forEach(l -> l.onChatParticipantsRetrieved(participants, chatId));
+    private void notifyChatParticipantsRetrieved(List<ChatParticipant> participants) {
+        chatParticipantsRetrievedListeners.forEach(l -> l.onChatParticipantsRetrieved(participants));
     }
 
     private void notifyConnectionFailure(String errorMessage) {
@@ -266,9 +268,6 @@ public class ChatClient implements AutoCloseable {
             String serverResponseJson;
             while ((serverResponseJson = in.readLine()) != null) {
                 Response response = gson.fromJson(serverResponseJson, Response.class);
-                // System.out.println("[DEBUG - Raw Server Response]: " + serverResponseJson); // Debugging can stay
-
-                // Special handling for file transfer initiation (server tells client to send file)
                 if ("READY_TO_RECEIVE_FILE".equals(response.getMessage())) {
                     notifyStatusUpdate("Server is ready for file transfer. Initiating file send...");
                     Type type = new TypeToken<Map<String, String>>() {}.getType();
@@ -276,7 +275,6 @@ public class ChatClient implements AutoCloseable {
                     pendingFileTransferId = data.get("transfer_id");
 
                     if (pendingFileTransferId != null) {
-                        // This must be called with the specific listener provided by the sendMediaMessage caller
                         sendFileBytes(currentFilePathToSend, pendingFileTransferId, currentFileTransferListener);
                     } else {
                         if (currentFileTransferListener != null) {
@@ -290,7 +288,7 @@ public class ChatClient implements AutoCloseable {
                 // Handle unsolicited new messages (e.g., from other users)
                 if (response.isSuccess() && "New message received".equals(response.getMessage())) {
                     Message newMessage = gson.fromJson(response.getData(), Message.class);
-                    System.out.println("         ================ new Message : "+newMessage);
+                    System.out.println("----- ["+Thread.currentThread().getName()+"] : From ChatClint : reciving new message : "+newMessage.toString());
                     notifyNewMessageReceived(newMessage);
                 }
                 // All other responses are put into the queue for the specific command method that sent the request
@@ -517,12 +515,10 @@ public class ChatClient implements AutoCloseable {
         Request request = new Request(Command.GET_USER_CHATS);
         Response response = sendRequestAndAwaitResponse(request);
 
-        System.out.println("------------   777777777778888888888888887            This Is After The Listener");
         if (response != null && response.isSuccess() && "User chats retrieved.".equals(response.getMessage())) {
             Type chatListType = new TypeToken<List<Chat>>() {}.getType();
             List<Chat> chats = gson.fromJson(response.getData(), chatListType);
             notifyUserChatsRetrieved(chats); // Notify dedicated listener
-            System.out.println("------------   777777777778888888888888887            This Is After The Listener");
         } else if (response != null) {
             notifyCommandResponse(response);
         }
@@ -568,7 +564,7 @@ public class ChatClient implements AutoCloseable {
         if (response != null && response.isSuccess()) {
             Type participantListType = new TypeToken<List<ChatParticipant>>() {}.getType();
             List<ChatParticipant> participants = gson.fromJson(response.getData(), participantListType);
-            notifyChatParticipantsRetrieved(participants, chatId); // Notify dedicated listener
+            notifyChatParticipantsRetrieved(participants); // Notify dedicated listener
         } else if (response != null) {
             notifyCommandResponse(response);
         }
@@ -949,7 +945,7 @@ public class ChatClient implements AutoCloseable {
         if(socket == null || socket.isClosed() || !socket.isConnected()){
             return new Response(false,"Error Connection To Server",null);
         }
-        System.out.println("---------------  New Request Will Be Sent TO Server. Request :"+request.toString());
+        System.out.println("----------  New Request Will Be Sent TO Server. Request :"+request.toString());
         try {
             responseQueue.clear(); // Clear any stale responses
             out.println(gson.toJson(request));
@@ -1015,7 +1011,7 @@ public class ChatClient implements AutoCloseable {
                 }
             }
             os.flush();
-
+            responseQueue.offer(new Response(true," File Recived Successfully",null));
             String fileTransferStatus = serverResponseReader.readLine();
             if (fileTransferStatus != null && fileTransferStatus.equals("FILE_RECEIVED_SUCCESS")) {
                 if (fileTransferListener != null) fileTransferListener.onComplete(file);

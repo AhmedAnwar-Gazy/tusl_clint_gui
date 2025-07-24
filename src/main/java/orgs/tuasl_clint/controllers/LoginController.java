@@ -1,7 +1,6 @@
 package orgs.tuasl_clint.controllers;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -18,8 +17,6 @@ import javafx.fxml.FXML;
 
 import java.net.URL;
 import java.sql.*;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -32,16 +29,14 @@ public class LoginController implements Initializable {
     @FXML private Button registerButton;
     @FXML private Label loginMessage;
     @FXML private CheckBox saveData;
-
-    private Gson gson = new GsonBuilder()
-            .registerTypeAdapter(Timestamp.class, new TimestampAdapter())
-            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
-            .serializeNulls()
-            .create();
+    private String usernameInput, passwordInput;
+    private Gson gson = ChatClient.getInstance().getGson();
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
-        tryLogin(this.usernameField.getText(),this.passwordField.getText());
+        this.usernameInput = usernameField.getText();
+        this.passwordInput = passwordField.getText();
+        tryLogin(this.usernameInput,this.passwordInput);
     }
     @FXML
     private void handleRegisterButtonAction(ActionEvent event) {
@@ -63,7 +58,6 @@ public class LoginController implements Initializable {
             }else {
                 mainContainer.getChildren().remove(login_using_data_last_btn);
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -85,7 +79,10 @@ public class LoginController implements Initializable {
                 sucessLogin();
             }
         }else {
-            this.loginMessage.setText(response.getMessage());
+            if(response != null)
+                loginMessage.setText(response.getMessage());
+            else
+                System.err.println("----- An Error Occurred While Trying To Login....!!");
         }
     }
     private void sucessLogin() {

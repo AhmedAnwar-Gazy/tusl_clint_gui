@@ -1,7 +1,11 @@
 package orgs.tuasl_clint.controllers;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -12,11 +16,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import orgs.tuasl_clint.models2.Chat;
-import orgs.tuasl_clint.models2.Message;
+import orgs.tuasl_clint.utils.BackendThreadManager.DataModel;
+import orgs.tuasl_clint.utils.BackendThreadManager.Executor;
 import orgs.tuasl_clint.utils.TimeStampHelperClass;
 
 import java.net.URL;
-import java.sql.Timestamp;
 import java.util.ResourceBundle;
 
 public class ChatListItemController implements Initializable {
@@ -45,51 +49,66 @@ public class ChatListItemController implements Initializable {
     @FXML
     private StackPane unreadCountPane;
 
-    private ObjectProperty<Chat> chatObjectProperty;
+    private ObjectProperty<Chat> chatObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<Integer> unreadCount;
+    private ObjectProperty<Boolean> selected;
 
     public Chat getChat() {
         return chatObjectProperty.get();
     }
 
-    public void setChat(Chat chat) {
-        this.chatObjectProperty.set(chat);
-        if (chat != null) {
-            updateChatItemName(chat.getChatName());
-            if(chat.getChatPictureUrl() != null && !(chat.getChatPictureUrl().isEmpty() || chat.getChatPictureUrl().isEmpty()))
-                try {
-                    updateProfilePicture(new Image(chat.getChatPictureUrl()));
-                } catch (Exception e) {
-                    System.out.println("an Error occured while trying to updata the chat Image");
-                }
-        }
+    public void setChat(ObjectProperty<Chat> chat) {
+        this.chatObjectProperty.set(chat.get());
     }
-
+    private ChangeListener<Chat> listener;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.chatObjectProperty = new SimpleObjectProperty<>();
-        this.unreadCount = new SimpleObjectProperty<>(0);
-        this.unreadCount.addListener((observableValue, oldValue,newValue) -> {
-            if(newValue > 0){
-                this.nameLabel.setText(newValue.toString());
-                this.unreadCountPane.setVisible(true);
-            }else {
-                this.unreadCountPane.setVisible(false);
+         chatObjectProperty.addListener(new ChangeListener<>() {
+            @Override
+            public void changed(ObservableValue<? extends Chat> observableValue, Chat oldVal, Chat newVal) {
+                if (newVal != null) {
+                    nameLabel.setText(newVal.getChatName());
+                    lastMessageLabel.setText((!DataModel.getInstance().getMessages(newVal.getId()).values().isEmpty() ?DataModel.getInstance().getMessages(newVal.getId()).values().stream().toList().getLast().get().getContent():("...")));
+                    if(newVal.getChatPictureUrl() != null && !(newVal.getChatPictureUrl().isEmpty())){
+                        Task<Image> task = new Task<Image>(){
+                            @Override
+                            protected Image call() throws Exception {
+                                try {
+                                    return new Image(newVal.getChatPictureUrl());
+                                } catch (Exception e) {
+                                    System.out.println("an Error occured while trying to updata the chat Image");
+                                    return null;
+                                }
+                            }
+                        };
+                        task.setOnSucceeded(_ ->{
+                            if(task.getValue() != null)
+                                updateProfilePicture(task.getValue());
+                        });
+                        Executor.submit(task);
+                    }
+                }
             }
         });
-//        this.statusLabel.setText("");
-//        this.nameLabel.setText("Chat Name Label");
+//        soutt("Binding Chat Values...");
+//        nameLabel.textProperty().bind(Bindings.selectString(chatObjectProperty,(chatObjectProperty.get() != null?(chatObjectProperty.get().get() != null?(chatObjectProperty.get().get().getChatName()):("Unknown")):("UnSet"))));
+////        unreadCountLabel.textProperty().bind(Bindings.selectString(chatObjectProperty,(chatObjectProperty.get() != null?(chatObjectProperty.get().get() != null?(chatObjectProperty.get().get().get):("Unknown")):("UnSet"))));
+//        lastMessageLabel.textProperty().bind(Bindings.selectString(chatObjectProperty,(chatObjectProperty.get() != null?(chatObjectProperty.get().get() != null?(DataModel.getInstance().getMessages(chatObjectProperty.get().get().getId()).values().stream().toList().getLast().get().getContent()):("...")):("...."))));
+//        timestampLabel.textProperty().bind(Bindings.selectString(chatObjectProperty,(chatObjectProperty.get() != null?(chatObjectProperty.get().get() != null?TimeStampHelperClass.formatTimeLeft(DataModel.getInstance().getMessages(chatObjectProperty.get().get().getId()).values().stream().toList().getLast().get().getSentAt()):("...")):("...."))));
+
+    }
+    private static void soutt(String msg){
+        System.out.println("----- ["+Thread.currentThread().getName()+"][ChatListItemController] : "+msg);
+    }
+    public HBox getView() {
+        return this.HboxAllProfile;
     }
 
-    public int getUnreadMessagesCount() {
-        return this.unreadCount.get();
+    public interface OnImageItemClickedListener{
+        public void onImageItemClicked(ObjectProperty<Chat> chat, ChatListItemController controller);
     }
-
-    private interface OnImageItemClickedListener{
-        public void onImageItemClicked(Chat chat,ChatListItemController controller);
-    }
-    private interface OnItemClickedListener{
-        public void onItemClicked(Chat Chat,ChatListItemController controller);
+    public interface OnItemClickedListener{
+        public void onItemClicked(ObjectProperty<Chat> Chat, ChatListItemController controller);
     }
 
     private OnImageItemClickedListener onImageItemClickedListener;
@@ -102,52 +121,17 @@ public class ChatListItemController implements Initializable {
     public void setOnItemClickedListener(OnItemClickedListener onItemClickedListener) {
         this.onItemClickedListener = onItemClickedListener;
     }
-    public void setUnreadCount(int count){
-        this.unreadCount.set(count);
-    }
 
-    public void updateChatItemName(String name){
-        this.nameLabel.setText(name);
-    }
-    public void updateLastMessageContent(String content ){
-        this.lastMessageLabel.setText(content);
-    }
-    // Make timestamp updates thread-safe
-    public void updateLastMessageDate(Timestamp date) {
-        javafx.application.Platform.runLater(() ->
-                timestampLabel.setText(TimeStampHelperClass.formatTimeLeft(date))
-        );
-    }
     public void updateProfilePicture(Image image) {
-        this.profilePictureImageView.setImage(image != null ? image : null);//getDefaultImage()); //TODO replace this code after fixing resources shared paths..
+        this.profilePictureImageView.setImage(image);
         makeCircularImage(profilePictureImageView);
-    }
-
-//    private Image getDefaultImage() {
-//        return new Image(this.getClass().getResourceAsStream("src/main/resources/orgs/tuasl_clint/images/default-group-profile.jpg"));
-//    }
-
-    public void updateLastMessage(Message message) {
-        if (message != null) {
-            this.updateLastMessageContent(message.getContent());
-            this.updateLastMessageDate(message.getSentAt());
-        } else {
-            this.updateLastMessageContent("");
-            this.updateLastMessageDate(null); // Handle null in TimeStampHelperClass
-        }
-    }
-
-    public void updateUnreadMessagesCount(long count) {
-        boolean hasUnread = count > 0;
-        this.unreadCountLabel.setText(hasUnread ? String.valueOf(count) : "");
-        this.unreadCountPane.setVisible(hasUnread);
     }
 
     @FXML
     void handelGroupImageClicked(MouseEvent event) {
         System.out.println("Image Of Item Clicked Of Chat ID: "+((chatObjectProperty.get() != null)?this.chatObjectProperty.get().getId(): "null"));
         if (chatObjectProperty.get() != null && onImageItemClickedListener != null) {
-            onImageItemClickedListener.onImageItemClicked(chatObjectProperty.get(), this);
+            onImageItemClickedListener.onImageItemClicked(chatObjectProperty, this);
         }
     }
     private void makeCircularImage(ImageView imageView) {
@@ -170,10 +154,13 @@ public class ChatListItemController implements Initializable {
         System.out.println("Item Clicked With Chat_ID: "+((chatObjectProperty.get() != null)?this.chatObjectProperty.get().getId(): "null"));
         if (chatObjectProperty.get() != null) {
             if (onItemClickedListener != null) {
-                onItemClickedListener.onItemClicked(chatObjectProperty.get(), this);
+                onItemClickedListener.onItemClicked(chatObjectProperty, this);
             }
             this.unreadCountPane.setVisible(false);
         }
+    }
+    public void setSelected(Boolean b){
+        this.selected.set(b);
     }
 
 }

@@ -1,0 +1,206 @@
+[2025-07-24 16:29:10.283] DataModel initialized
+[2025-07-24 16:49:00.481] DataModel initialized
+[2025-07-24 16:51:54.159] DataModel initialized
+[2025-07-24 16:57:10.974] DataModel initialized
+[2025-07-24 16:57:56.512] DataModel initialized
+[2025-07-24 16:59:19.354] DataModel initialized
+[2025-07-24 17:02:13.963] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 17:02:13.971] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 17:06:06.801] DataModel initialized
+[2025-07-24 17:06:07.441] Chat not found: 17
+[2025-07-24 17:10:14.426] DataModel initialized
+[2025-07-24 17:16:28.232] DataModel initialized
+[2025-07-24 17:19:27.869] DataModel initialized
+[2025-07-24 17:19:41.526] DataModel initialized
+[2025-07-24 17:20:33.547] DataModel initialized
+[2025-07-24 17:22:48.962] DataModel initialized
+[2025-07-24 18:09:24.719] DataModel initialized
+[2025-07-24 18:16:50.901] DataModel initialized
+[2025-07-24 18:16:52.234] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.246] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.257] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.278] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.286] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.294] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.302] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.308] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.317] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.323] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:16:52.330] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:13.635] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:13.646] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:13.660] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:34.730] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:34.743] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:34.754] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:34.765] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:55.836] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:55.843] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:17:55.852] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:18:16.896] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:55.570] DataModel initialized
+[2025-07-24 18:22:56.863] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.878] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.891] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.901] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.911] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.919] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.928] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.938] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.946] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.954] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:22:56.964] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:18.297] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:18.304] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:18.311] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:39.346] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:39.352] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:39.358] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:23:39.364] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:00.394] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:00.401] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:00.408] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:22.120] DataModel initialized
+[2025-07-24 18:24:23.354] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.374] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.394] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.419] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.428] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.438] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.445] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.454] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.462] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.471] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:23.478] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:44.701] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:44.708] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:24:44.715] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:05.773] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:05.782] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:05.792] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:05.798] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:26.872] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:26.893] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:26.925] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:25:26.947] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:06.261] DataModel initialized
+[2025-07-24 18:39:07.786] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.795] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.810] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.825] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.842] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.859] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.874] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.891] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.908] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.928] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:07.939] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:29.248] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:29.258] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:29.264] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:50.328] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:50.338] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:50.349] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:39:50.356] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:40:11.470] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:40:11.478] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:40:11.490] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:40:32.536] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:29.211] DataModel initialized
+[2025-07-24 18:43:30.673] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.689] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.705] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.724] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.740] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.776] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.795] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.809] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.821] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.832] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:30.841] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:52.083] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:52.091] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:43:52.097] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:13.142] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:13.150] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:13.156] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:13.178] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:34.208] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:34.215] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:34.225] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:44:55.291] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:23.787] DataModel initialized
+[2025-07-24 18:49:25.133] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.170] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.181] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.192] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.205] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.214] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.224] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.234] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.250] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.262] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:25.274] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:46.594] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:46.600] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:49:46.620] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:07.664] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:07.673] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:07.679] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:07.687] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:28.732] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:28.738] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:28.750] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:50:49.789] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:55.402] DataModel initialized
+[2025-07-24 18:52:56.899] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.916] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.933] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.952] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.967] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.982] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:56.998] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.012] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.021] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.031] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.038] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.208] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.220] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.230] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.242] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.248] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.255] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.262] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.270] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.277] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.285] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:52:57.293] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:02.628] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:02.663] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:02.696] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:02.733] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:24.273] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:24.288] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:24.298] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:24.305] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:29.831] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:29.837] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:29.844] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 18:53:29.849] Create SendMessageItemController failed: Cannot invoke "String.isEmpty()" because the return value of "orgs.tuasl_clint.models2.Message.getSenderName()" is null
+[2025-07-24 19:04:59.125] DataModel initialized
+[2025-07-24 19:08:20.096] DataModel initialized
+[2025-07-24 19:11:13.191] DataModel initialized
+[2025-07-24 19:14:03.483] DataModel initialized
+[2025-07-24 19:17:12.066] DataModel initialized
+[2025-07-24 19:22:33.007] DataModel initialized
+[2025-07-24 19:25:02.897] DataModel initialized
+[2025-07-24 19:26:35.851] DataModel initialized
+[2025-07-24 19:28:24.998] DataModel initialized
+[2025-07-24 19:43:44.726] DataModel initialized
+[2025-07-24 19:45:49.792] DataModel initialized
+[2025-07-24 19:48:19.326] DataModel initialized
+[2025-07-24 19:50:55.494] DataModel initialized
+[2025-07-24 20:04:25.096] DataModel initialized
+[2025-07-24 20:04:25.693] Chat not found: 19
+[2025-07-24 20:04:25.695] Chat not found: 14
+[2025-07-24 20:04:43.035] DataModel initialized

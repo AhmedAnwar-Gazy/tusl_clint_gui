@@ -431,11 +431,12 @@ public class LoadItemController implements Initializable {
                 System.out.println("File Path: " + file.getAbsolutePath());
                 System.out.println("Files Path From Helper: " + FilesHelper.getFilesPath(media));
                 System.out.println("RootFile: " + FilesHelper.getFilesRootPath());
-
                 Platform.runLater(() -> {
                     buttonsContainer.getChildren().remove(downloadButton);
                     buttonsContainer.getChildren().add(cancelDownloadButton);
                 });
+                if(this.onDownloadButtonClickedListener != null)
+                    onDownloadButtonClickedListener.onDownloadButtonClicked(media,file);
                 media.setFileName(media.getFilePathOrUrl());
                 System.out.println(ChatClient.getInstance().getFileByMedia(
                         media,
@@ -470,7 +471,6 @@ public class LoadItemController implements Initializable {
                                     if (onReadyItemListener != null) {
                                         onReadyItemListener.onReadyItem(readyFileContainer);
                                     }
-
                                     String name = media.getFileName();
                                     media.setFileName(file.getName());
                                     try {
@@ -480,6 +480,7 @@ public class LoadItemController implements Initializable {
                                         media.setFileName(name);
                                     }
                                     isDownloading.set(false);
+                                    ChatClient.getInstance().responseQueue.offer(new Response(true,"File Recived Sucessfully",null));
                                 });
                             }
                         }

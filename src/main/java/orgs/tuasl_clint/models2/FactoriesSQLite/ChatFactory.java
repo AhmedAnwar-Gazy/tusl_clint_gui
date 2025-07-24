@@ -9,6 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatFactory {
+    public static List<Chat> getAll() {
+        String sql = "SELECT * FROM chats";
+        List<Chat> chats = new ArrayList<>();
+        try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql)) {
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    chats.add(createFromResultSet(rs));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("-----["+Thread.currentThread().getName()+"][ChatFactory] : Cannot Get All Chats : "+e.getMessage());
+        }
+        return chats;
+    }
+
     public Chat create() {
         return new Chat();
     }

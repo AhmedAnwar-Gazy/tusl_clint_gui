@@ -15,6 +15,18 @@ public class Chat {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
+    public Chat(Chat chat) {
+        this.id = chat.id;
+        this.chatType = chat.chatType;
+        this.chatName = chat.chatName;
+        this.chatDescription = chat.chatDescription;
+        this.chatPictureUrl = chat.chatPictureUrl;
+        this.creatorId = chat.creatorId;
+        this.publicLink = chat.publicLink;
+        this.createdAt = chat.createdAt;
+        this.updatedAt = chat.updatedAt;
+    }
+
 
     public enum ChatType {
         PRIVATE, GROUP, CHANNEL, UNKNOWN;

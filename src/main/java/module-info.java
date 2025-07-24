@@ -26,10 +26,13 @@ module orgs.tuasl_clint {
     requires com.gluonhq.richtextarea;
     requires javafx.controls;
     requires svg.salamander;
+    requires org.jetbrains.annotations;
 
     opens orgs.tuasl_clint.protocol to com.google.gson;
     exports orgs.tuasl_clint.client;
-    opens orgs.tuasl_clint.client to javafx.fxml; // Add this line
+    opens orgs.tuasl_clint.client to javafx.fxml;
+    exports orgs.tuasl_clint.utils.BackendThreadManager;
+    opens orgs.tuasl_clint.utils.BackendThreadManager to javafx.fxml; // Add this line
 
 
 }

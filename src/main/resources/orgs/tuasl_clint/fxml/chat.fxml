@@ -27,7 +27,11 @@
                           </graphic>
                   </Button> <TextField fx:id="searchTF" promptText="Search" style="-fx-background-radius: 20;-fx-border-radius: 15;" HBox.hgrow="ALWAYS" />
                   </HBox>
-                  <ListView fx:id="chatListView" cacheShape="false" maxHeight="1.7976931348623157E308" scaleShape="false" styleClass="chat-list" />
+               <StackPane fx:id="listViewContainerStackPane">
+                  <children>
+                     <ListView fx:id="chatListView" />
+                  </children>
+               </StackPane>
             </children>
          </VBox>
          <HBox fx:id="menuItemContainer" />

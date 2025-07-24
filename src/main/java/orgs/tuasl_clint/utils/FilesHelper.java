@@ -72,13 +72,13 @@ public class FilesHelper {
             };
     }
     public static fileType toMediaType(String type){
-        return switch (type){
-            case "text","TEXT","TXT","txt" -> fileType.TEXT;
-            case "video","VIDEO","Video" -> fileType.VIDEO;
-            case "image","Image","IMAGE" -> fileType.IMAGE;
-            case "audio","Audio","AUDIO" , "voiceNote" -> fileType.AUDIO;
+        return switch (type.toLowerCase()){
+            case "text","txt" -> fileType.TEXT;
+            case "video" -> fileType.VIDEO;
+            case "image"-> fileType.IMAGE;
+            case "audio", "voicenote" -> fileType.AUDIO;
             case null -> fileType.INVALID;
-            default -> fileType.FILE;
+            default -> fileType.TEXT ;
         };
     }
     public static fileType getFileType(Path path) {

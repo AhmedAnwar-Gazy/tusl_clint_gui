@@ -22,6 +22,17 @@ public class Message {
     private Integer viewCount;
     private Media media;
 
+    public void setMedia(Media media) {
+        this.media = media;
+        if(media != null){
+            this.messageType = media.getMediaType();
+            this.mediaId = media.getId();
+        }else {
+            this.messageType = "text";
+            this.mediaId = 0L;
+        }
+    }
+
     public Message(Long id) {
         this.id = id;
     }

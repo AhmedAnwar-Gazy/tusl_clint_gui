@@ -9,6 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MediaFactory {
+    public static List<Media> getAll() {
+        String sql = "SELECT * FROM media";
+        List<Media> mediaList = new ArrayList<>();
+        try (PreparedStatement statement = DatabaseConnectionSQLite.getInstance().getConnection().prepareStatement(sql)) {
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    mediaList.add(createFromResultSet(rs));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("----- ["+Thread.currentThread().getName()+"][MediaFactory] : Cannot Get All Media : "+e.getMessage());
+        }
+        return mediaList;
+    }
+
     public Media create() {
         return new Media();
     }

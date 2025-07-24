@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Circle?>
+
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.videocallui.IncomingCallController">
+    <children>
+        <VBox alignment="CENTER" spacing="30.0">
+            <children>
+                <StackPane alignment="CENTER">
+                    <children>
+                        <Circle radius="80.0" style="-fx-fill: #ecf0f1;"/>
+                        <ImageView fx:id="callerAvatarView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                        </ImageView>
+                        <Text fx:id="callerInitialsText" fill="#2c3e50" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                            <font>
+                                <Font name="System Bold" size="96.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </StackPane>
+
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Text fx:id="callerNameText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                            <font>
+                                <Font name="System Bold" size="48.0" />
+                            </font>
+                        </Text>
+                        <Text fill="#ecf0f1" strokeType="OUTSIDE" strokeWidth="0.0" text="Incoming Video Call">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <Button fx:id="declineButton" mnemonicParsing="false" onAction="#handleDecline" prefHeight="90.0" prefWidth="90.0" styleClass="call-button, decline-button">
+                            <graphic>
+                                <Text fill="WHITE" text=""> <font>
+                                    <Font name="FontAwesome" size="40.0" />
+                                </font>
+                                </Text>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#handleAccept" prefHeight="90.0" prefWidth="90.0" styleClass="call-button, accept-button">
+                            <graphic>
+                                <Text fill="WHITE" text=""> <font>
+                                    <Font name="FontAwesome" size="40.0" />
+                                </font>
+                                </Text>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</StackPane>
+
+
+
+<!--        /* incoming_call_style.css */-->
+
+<!--        .call-button {-->
+<!--        -fx-background-radius: 50%; /* Circular buttons */-->
+<!--        -fx-border-radius: 50%;-->
+<!--        -fx-pref-width: 90px;-->
+<!--        -fx-pref-height: 90px;-->
+<!--        -fx-padding: 0; /* Remove default button padding */-->
+<!--        }-->
+
+<!--        .accept-button {-->
+<!--        -fx-background-color: #28a745; /* Green for accept */-->
+<!--        -fx-border-color: #28a745;-->
+<!--        }-->
+
+<!--        .accept-button:hover {-->
+<!--        -fx-background-color: #218838;-->
+<!--        }-->
+
+<!--        .accept-button:pressed {-->
+<!--        -fx-background-color: #1e7e34;-->
+<!--        }-->
+
+<!--        .decline-button {-->
+<!--        -fx-background-color: #dc3545; /* Red for decline */-->
+<!--        -fx-border-color: #dc3545;-->
+<!--        }-->
+
+<!--        .decline-button:hover {-->
+<!--        -fx-background-color: #c82333;-->
+<!--        }-->
+
+<!--        .decline-button:pressed {-->
+<!--        -fx-background-color: #bd2130;-->
+<!--        }-->
+
+<!--        /* Style for the text/icon inside the buttons */-->
+<!--        .call-button Text {-->
+<!--        -fx-fill: white;-->
+<!--        -fx-font-size: 40px; /* Adjust icon size */-->
+<!--        }-->
+
+<!--        /* Optional: Make the avatar image circular */-->
+<!--        /* You'd typically use a clip for this on the ImageView itself,-->
+<!--        but a simpler way is to put the ImageView inside a StackPane-->
+<!--        and set a circular clip on the StackPane or use a circular mask.-->
+<!--        For simplicity, if you place a circular image, it works.-->
+<!--        Otherwise, for proper circular clipping: */-->
+<!--        #callerAvatarView {-->
+<!--        -fx-clip: null; /* Reset any Scene Builder clips */-->
+<!--        -fx-shape: "M 80,0 A 80,80 0 1 1 79.99,0 Z"; /* A circle path */-->
+<!--        }-->
