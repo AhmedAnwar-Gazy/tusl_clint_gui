@@ -59,24 +59,6 @@
                            <Insets top="2.0" />
                         </padding>
                         <children>
-                           <Button fx:id="videoCallButton" onAction="#handleVideoCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
-                              <graphic>
-                                 <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../icons/video_call.png" />
-                                    </image>
-                                 </ImageView>
-                              </graphic>
-                           </Button>
-                           <Button fx:id="audioCallButton" onAction="#handleAudioCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
-                              <graphic>
-                                 <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../icons/vois_call.png" />
-                                    </image>
-                                 </ImageView>
-                              </graphic>
-                           </Button>
                            <Button fx:id="addParticipantButton" mnemonicParsing="false" onAction="#handleAddParticipantButtonClicked">
                               <graphic>
                                  <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
@@ -108,7 +90,7 @@
                                     </graphic>
                                 </Button>
                                 <TextField fx:id="messageInputField" onAction="#handleSendButtonAction" prefHeight="39.0" promptText="Write a message..." style="-fx-background-radius: 20;" HBox.hgrow="ALWAYS" />
-      
+
                                 <Button fx:id="emojiButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleEmojiButtonAction" prefHeight="15.0" prefWidth="30.0" style="-fx-background-color: #FF000000; -fx-background-radius: 50;">
                                     <graphic>
                                         <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -169,4 +151,7 @@
             </content>
         </ScrollPane>
     </right>
+   <top>
+      <StackPane BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>

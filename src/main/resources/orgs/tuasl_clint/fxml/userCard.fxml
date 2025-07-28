@@ -25,6 +25,24 @@
                </children>
             </HBox>
             <Region maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" />
+            <Button fx:id="videoCallButton" onAction="#handleVideoCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/video_call.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="audioCallButton" onAction="#handleAudioCallButtonAction" style="-fx-background-color: #FF000000;" styleClass="icon-button">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/vois_call.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <CheckBox fx:id="checkedItem" mnemonicParsing="false" />
          </children>
          <cursor>

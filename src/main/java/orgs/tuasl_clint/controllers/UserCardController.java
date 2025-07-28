@@ -4,8 +4,10 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -13,16 +15,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import orgs.tuasl_clint.client.ChatClient;
 import orgs.tuasl_clint.models2.User;
+import orgs.tuasl_clint.protocol.Response;
 import orgs.tuasl_clint.utils.BackendThreadManager.Executor;
 import orgs.tuasl_clint.utils.FilesHelper;
+import orgs.tuasl_clint.utils.Navigation;
 
+import javax.swing.*;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserCardController implements Initializable,Controller {
 
+    public Button videoCallButton;
+    public Button audioCallButton;
     @FXML
     private StackPane mainContainer;
 
@@ -92,6 +100,32 @@ public class UserCardController implements Initializable,Controller {
     @Override
     public StackPane getView() {
         return mainContainer;
+    }
+
+    public void handleVideoCallButtonAction(ActionEvent event) {
+        Task<Response> startCall = new Task<Response>() {
+            @Override
+            protected Response call() throws Exception {
+                try {
+                    Response response = ChatClient.getInstance().initiateVideoCall(String.valueOf(user.get().getId()));
+                    if(response.isSuccess()){
+                        Navigation.loadPage("VideoCallView.fxml");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Cannot Start The Video Call Error : "+response.getMessage());
+                    }
+                    return response;
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null,"Error: "+e.getMessage());
+                    return new Response(false,e.getMessage(),null);
+                }
+            }
+        };
+
+
+    }
+
+    public void handleAudioCallButtonAction(ActionEvent event) {
+
     }
 
     public interface OnClickListener{

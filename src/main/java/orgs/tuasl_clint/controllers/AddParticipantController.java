@@ -85,8 +85,10 @@ public class AddParticipantController implements Initializable,
                             else
                                 selectedUsers.add(user);
                         });
+                    }else {
+                        serrr("Error The UserCard Loaded For User : "+ user.get().toString()+" Is Null");
                     }
-                    setGraphic(task.getValue().getView());
+                    setGraphic(task.getValue()!= null? task.getValue().getView():null);
                 });
                 Executor.submit(task);
             }

@@ -499,59 +499,59 @@ public class ChatController{
         return emojiLabel;
     }
 
-    @FXML
-    public void handleAudioCallButtonAction(ActionEvent event) {
-        Chat selectedUser =currentChat.get();
-        if (selectedUser == null) {
-            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
-            return;
-        }
-
-        try {
-            // مثال: IP الطرف الآخر هو 192.168.1.100 و البورت 7711
-            String remoteIP = "localhost";
-            int remotePort = 7711;
-
-            // توليد بورت عشوائي للاستقبال
-            DatagramSocket tempSocket = new DatagramSocket(0);
-            int localPort = tempSocket.getLocalPort();
-            tempSocket.close();
-
-            AudioCallWindow audioCallWindow = new AudioCallWindow("📞 مع " + selectedUser);
-            AudioSendUDP sender = new AudioSendUDP();
-            sender.start(remoteIP, remotePort);
-
-            AudioReceiverUDP receiver = new AudioReceiverUDP();
-            receiver.start(localPort); // استقبل على نفس البورت
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("❌ فشل الاتصال بمكالمة الصوت");
-        }
-    }
-
-
-    @FXML
-    public void handleVideoCallButtonAction(ActionEvent event) {
-        Chat selectedUser = currentChat.get();
-        if (selectedUser == null) {
-            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
-            return;
-        }
-
-        try {
-            String remoteIP = "localhost";          // أو IP الجهاز الآخر
-            int remoteVideoPort = 8811;             // هذا بورت السيرفر الثابت
-
-            VideoCallWindowUDP callWindow = new VideoCallWindowUDP("📹 مكالمة فيديو مع " + selectedUser);
-            callWindow.startSending(remoteIP, remoteVideoPort);  // إرسال للفيديو
-            callWindow.startReceiving();                         // استقبال على بورت عشوائي
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("❌ فشل الاتصال بالفيديو");
-        }
-    }
+//    @FXML
+//    public void handleAudioCallButtonAction(ActionEvent event) {
+//        Chat selectedUser =currentChat.get();
+//        if (selectedUser == null) {
+//            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
+//            return;
+//        }
+//
+//        try {
+//            // مثال: IP الطرف الآخر هو 192.168.1.100 و البورت 7711
+//            String remoteIP = "localhost";
+//            int remotePort = 7711;
+//
+//            // توليد بورت عشوائي للاستقبال
+//            DatagramSocket tempSocket = new DatagramSocket(0);
+//            int localPort = tempSocket.getLocalPort();
+//            tempSocket.close();
+//
+//            AudioCallWindow audioCallWindow = new AudioCallWindow("📞 مع " + selectedUser);
+//            AudioSendUDP sender = new AudioSendUDP();
+//            sender.start(remoteIP, remotePort);
+//
+//            AudioReceiverUDP receiver = new AudioReceiverUDP();
+//            receiver.start(localPort); // استقبل على نفس البورت
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("❌ فشل الاتصال بمكالمة الصوت");
+//        }
+//    }
+//
+//
+//    @FXML
+//    public void handleVideoCallButtonAction(ActionEvent event) {
+//        Chat selectedUser = currentChat.get();
+//        if (selectedUser == null) {
+//            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
+//            return;
+//        }
+//
+//        try {
+//            String remoteIP = "localhost";          // أو IP الجهاز الآخر
+//            int remoteVideoPort = 8811;             // هذا بورت السيرفر الثابت
+//
+//            VideoCallWindowUDP callWindow = new VideoCallWindowUDP("📹 مكالمة فيديو مع " + selectedUser);
+//            callWindow.startSending(remoteIP, remoteVideoPort);  // إرسال للفيديو
+//            callWindow.startReceiving();                         // استقبال على بورت عشوائي
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("❌ فشل الاتصال بالفيديو");
+//        }
+//    }
 
 
     public void handleAddParticipantButtonClicked(ActionEvent event) {

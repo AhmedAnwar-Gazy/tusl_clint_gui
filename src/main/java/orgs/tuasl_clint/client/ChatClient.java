@@ -7,16 +7,17 @@ import orgs.tuasl_clint.models2.*;
 import orgs.tuasl_clint.protocol.*;
 import orgs.tuasl_clint.utils.*;
 
+import javax.swing.*;
 import java.io.*;
 import java.lang.reflect.Type;
-import java.net.Socket;
-import java.net.SocketException;
+import java.net.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import static orgs.tuasl_clint.utils.StunClient.getPublicAddress;
 
 /**
  * ChatClient class implemented as a Singleton for use in a JavaFX application.
@@ -263,11 +264,58 @@ public class ChatClient implements AutoCloseable {
      * Dispatches unsolicited messages to listeners and puts command responses
      * into a queue for the calling thread.
      */
+//    private void listenForServerMessages() {
+//        try {
+//            String serverResponseJson;
+//            while ((serverResponseJson = in.readLine()) != null) {
+//                Response response = gson.fromJson(serverResponseJson, Response.class);
+//                if ("READY_TO_RECEIVE_FILE".equals(response.getMessage())) {
+//                    notifyStatusUpdate("Server is ready for file transfer. Initiating file send...");
+//                    Type type = new TypeToken<Map<String, String>>() {}.getType();
+//                    Map<String, String> data = gson.fromJson(response.getData(), type);
+//                    pendingFileTransferId = data.get("transfer_id");
+//
+//                    if (pendingFileTransferId != null) {
+//                        sendFileBytes(currentFilePathToSend, pendingFileTransferId, currentFileTransferListener);
+//                    } else {
+//                        if (currentFileTransferListener != null) {
+//                            currentFileTransferListener.onFail("Error: Server responded READY_TO_RECEIVE_FILE but no transfer_id found in data.");
+//                        }
+//                        notifyConnectionFailure("Server responded READY_TO_RECEIVE_FILE but no transfer_id found in data.");
+//                    }
+//                    continue; // Do not put this into the main response queue
+//                }
+//
+//                // Handle unsolicited new messages (e.g., from other users)
+//                if (response.isSuccess() && "New message received".equals(response.getMessage())) {
+//                    Message newMessage = gson.fromJson(response.getData(), Message.class);
+//                    System.out.println("----- ["+Thread.currentThread().getName()+"] : From ChatClint : reciving new message : "+newMessage.toString());
+//                    notifyNewMessageReceived(newMessage);
+//                }
+//                // All other responses are put into the queue for the specific command method that sent the request
+//                else {
+//                    responseQueue.put(response);
+//                }
+//            }
+//        } catch (SocketException e) {
+//            notifyConnectionFailure("Server connection lost: " + e.getMessage());
+//        } catch (IOException e) {
+//            notifyConnectionFailure("Error reading from server: " + e.getMessage());
+//        } catch (InterruptedException e) {
+//            notifyConnectionFailure("Listener thread interrupted: " + e.getMessage());
+//            Thread.currentThread().interrupt();
+//        } finally {
+//            closeConnection();
+//        }
+//    }
     private void listenForServerMessages() {
         try {
             String serverResponseJson;
             while ((serverResponseJson = in.readLine()) != null) {
+
                 Response response = gson.fromJson(serverResponseJson, Response.class);
+                System.out.println("[DEBUG - Raw Server Response]: " + serverResponseJson);
+
                 if ("READY_TO_RECEIVE_FILE".equals(response.getMessage())) {
                     notifyStatusUpdate("Server is ready for file transfer. Initiating file send...");
                     Type type = new TypeToken<Map<String, String>>() {}.getType();
@@ -282,31 +330,150 @@ public class ChatClient implements AutoCloseable {
                         }
                         notifyConnectionFailure("Server responded READY_TO_RECEIVE_FILE but no transfer_id found in data.");
                     }
-                    continue; // Do not put this into the main response queue
+                    continue;
+                }
+                System.out.println(" ---------- new message ");
+
+                String commandcall = response.getMessage();
+                switch (commandcall) {
+                    case "VIDEO_CALL_OFFER":
+                        Map<String, Object> offerData = gson.fromJson(response.getData(), new TypeToken<Map<String, Object>>(){}.getType());
+                        int callerId = ((Double) offerData.get("caller_id")).intValue();
+                        String callerUsername = (String) offerData.get("caller_username");
+                        // Retrieve separate video and audio IPs/ports
+                        String callerPublicVideoIp = (String) offerData.get("caller_public_video_ip");
+                        int callerUdpVideoPort = ((Double) offerData.get("caller_udp_video_port")).intValue();
+                        String callerPublicAudioIp = (String) offerData.get("caller_public_audio_ip"); // NEW
+                        int callerUdpAudioPort = ((Double) offerData.get("caller_udp_audio_port")).intValue(); // NEW
+
+                        System.out.println("Incoming video call from " + callerUsername + " (Video: " + callerPublicVideoIp + ":" + callerUdpVideoPort + ", Audio: " + callerPublicAudioIp + ":" + callerUdpAudioPort + ")");
+
+                        final int finalCallerId = callerId;
+                        final String finalCallerPublicVideoIp = callerPublicVideoIp;
+                        final int finalCallerUdpVideoPort = callerUdpVideoPort;
+                        final String finalCallerPublicAudioIp = callerPublicAudioIp; // NEW
+                        final int finalCallerUdpAudioPort = callerUdpAudioPort;    // NEW
+                        final String finalCallerUsername = callerUsername;
+
+                        SwingUtilities.invokeLater(() -> {
+                            int choice = JOptionPane.showConfirmDialog(
+                                    null,
+                                    "Incoming video call from " + finalCallerUsername + ".\nDo you want to accept?",
+                                    "Incoming Video Call",
+                                    JOptionPane.YES_NO_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE
+                            );
+                            boolean acceptCall = (choice == JOptionPane.YES_OPTION);
+
+                            try {
+                                // Get own public video and audio addresses via STUN
+                                InetSocketAddress publicVideoAddress = getPublicAddress(udpVideoSocket);
+                                InetSocketAddress publicAudioAddress = getPublicAddress(udpAudioSocket);
+
+                                String myPublicVideoIp = publicVideoAddress != null ? publicVideoAddress.getAddress().getHostAddress() : null;
+                                int myPublicVideoPort = publicVideoAddress != null ? publicVideoAddress.getPort() : -1;
+                                String myPublicAudioIp = publicAudioAddress != null ? publicAudioAddress.getAddress().getHostAddress() : null;
+                                int myPublicAudioPort = publicAudioAddress != null ? publicAudioAddress.getPort() : -1;
+
+                                if (myPublicVideoIp == null || myPublicVideoPort == -1 || myPublicAudioIp == null || myPublicAudioPort == -1) {
+                                    System.err.println("Could not determine own public video/audio IP/port via STUN. Cannot answer call.");
+                                    acceptCall = false; // Force reject if STUN fails
+                                }
+
+                                Map<String, Object> answerPayload = new HashMap<>();
+                                answerPayload.put("caller_id", finalCallerId);
+                                answerPayload.put("accepted", acceptCall);
+                                if (acceptCall) {
+                                    answerPayload.put("recipient_public_video_ip", myPublicVideoIp);
+                                    answerPayload.put("recipient_udp_video_port", myPublicVideoPort);
+                                    answerPayload.put("recipient_public_audio_ip", myPublicAudioIp); // NEW
+                                    answerPayload.put("recipient_udp_audio_port", myPublicAudioPort); // NEW
+                                }
+
+                                Request request = new Request(Command.VIDEO_CALL_ANSWER, answerPayload);
+                                out.println(gson.toJson(request));
+
+                                if (acceptCall) {
+                                    // Store remote video and audio IPs/ports
+                                    remoteVideoIp = InetAddress.getByName(finalCallerPublicVideoIp);
+                                    remoteVideoUdpPort = finalCallerUdpVideoPort;
+                                    remoteAudioIp = InetAddress.getByName(finalCallerPublicAudioIp); // NEW
+                                    remoteAudioUdpPort = finalCallerUdpAudioPort;    // NEW
+
+                                    sendUdpPunchingPackets(); // Punch holes for both streams
+                                    startMediaCallThreads();
+                                    System.out.println("Accepted call from " + finalCallerUsername + ". Initiating media stream...");
+                                } else {
+                                    System.out.println("Rejected call from " + finalCallerUsername + ".");
+                                }
+                            } catch (IOException e) {
+                                System.err.println("Error responding to video call offer: " + e.getMessage());
+                                e.printStackTrace();
+                            } catch (Exception e) {
+                                System.err.println("STUN discovery error during call answer: " + e.getMessage());
+                                e.printStackTrace();
+                            }
+                        });
+                        break;
+
+                    case "VIDEO_CALL_ACCEPTED":
+                        Map<String, Object> acceptedData = gson.fromJson(response.getData(), new TypeToken<Map<String, Object>>(){}.getType());
+                        // Retrieve separate video and audio IPs/ports
+                        String calleePublicVideoIp = (String) acceptedData.get("callee_public_video_ip");
+                        int calleeUdpVideoPort = ((Double) acceptedData.get("callee_udp_video_port")).intValue();
+                        String calleePublicAudioIp = (String) acceptedData.get("callee_public_audio_ip"); // NEW
+                        int calleeUdpAudioPort = ((Double) acceptedData.get("callee_udp_audio_port")).intValue(); // NEW
+
+                        try {
+                            remoteVideoIp = InetAddress.getByName(calleePublicVideoIp);
+                            remoteAudioIp = InetAddress.getByName(calleePublicAudioIp); // NEW
+                        } catch (UnknownHostException e) {
+                            System.err.println("Invalid callee IP address: " + calleePublicVideoIp + " or " + calleePublicAudioIp + " - " + e.getMessage());
+                            break;
+                        }
+                        remoteVideoUdpPort = calleeUdpVideoPort;
+                        remoteAudioUdpPort = calleeUdpAudioPort; // NEW
+
+                        sendUdpPunchingPackets(); // Punch holes for both streams
+                        startMediaCallThreads();
+                        System.out.println("Call accepted by " + (String)acceptedData.get("callee_username") + ". Starting media stream.");
+                        break;
+
+                    case "VIDEO_CALL_REJECTED":
+                        Map<String, Object> rejectedData = gson.fromJson(response.getData(), new TypeToken<Map<String, Object>>(){}.getType());
+                        System.out.println("Video call rejected by " + (String)rejectedData.get("callee_username"));
+                        stopMediaCallThreads();
+                        break;
+
+                    case "VIDEO_CALL_ENDED":
+                        Map<String, Object> endedData = gson.fromJson(response.getData(), new TypeToken<Map<String, Object>>(){}.getType());
+                        System.out.println("Video call ended by " + (String)endedData.get("ender_id"));
+                        stopMediaCallThreads();
+                        break;
+
+                    default:
                 }
 
-                // Handle unsolicited new messages (e.g., from other users)
                 if (response.isSuccess() && "New message received".equals(response.getMessage())) {
                     Message newMessage = gson.fromJson(response.getData(), Message.class);
                     System.out.println("----- ["+Thread.currentThread().getName()+"] : From ChatClint : reciving new message : "+newMessage.toString());
                     notifyNewMessageReceived(newMessage);
-                }
-                // All other responses are put into the queue for the specific command method that sent the request
-                else {
+                } else {
                     responseQueue.put(response);
                 }
             }
         } catch (SocketException e) {
-            notifyConnectionFailure("Server connection lost: " + e.getMessage());
+            System.out.println("Server connection lost: " + e.getMessage());
         } catch (IOException e) {
-            notifyConnectionFailure("Error reading from server: " + e.getMessage());
+            System.err.println("Error reading from server: " + e.getMessage());
         } catch (InterruptedException e) {
-            notifyConnectionFailure("Listener thread interrupted: " + e.getMessage());
+            System.err.println("Listener thread interrupted: " + e.getMessage());
             Thread.currentThread().interrupt();
         } finally {
             closeConnection();
         }
     }
+
 
     /**
      * Attempts to log in a user.
@@ -1207,8 +1374,242 @@ public class ChatClient implements AutoCloseable {
      * In a real JavaFX application, you would typically initialize and register listeners
      * within your Application's start method or a controller.
      */
-
     public Gson getGson() {
         return this.gson;
+    }
+    //--------------------------Audio Video Call Updates----------------------------------------------------------------\
+    private DatagramSocket udpVideoSocket; // UDP socket for video stream
+    private DatagramSocket udpAudioSocket; // UDP socket for audio stream
+
+    private int localVideoUdpPort;
+    private int localAudioUdpPort;
+
+    private InetAddress remoteVideoIp;
+    private int remoteVideoUdpPort;
+    private InetAddress remoteAudioIp; // NEW: Remote IP for audio
+    private int remoteAudioUdpPort;    // NEW: Remote UDP port for audio
+
+    private VideoCaptureThread videoCaptureThread;
+    private VideoReceiverThread videoReceiverThread;
+    private AudioCaptureThread audioCaptureThread;
+    private AudioReceiverThread audioReceiverThread;
+
+    // UI for video call display
+    private JFrame videoFrame;
+    private JLabel videoLabel;
+
+    /**
+     * Initiates a video call to a target user.
+     * This method now discovers the client's public IP address and separate ports
+     * for video and audio using STUN, then sends them to the server.
+     * @param targetUserId The ID of the user to call.
+     */
+    public Response initiateVideoCall(String targetUserId) throws Exception {
+        // Ensure UDP sockets are initialized before STUN
+        if (udpVideoSocket == null || udpVideoSocket.isClosed()) {
+            try {
+                udpVideoSocket = new DatagramSocket();
+                localVideoUdpPort = udpVideoSocket.getLocalPort();
+                System.out.println("Client UDP video socket opened on port: " + localVideoUdpPort);
+            } catch (SocketException e) {
+                serrr("Error opening UDP video socket for call E-MSG : " + e.getMessage());
+                return new Response(false,"Error opening UDP video socket for call E-MSG : " + e.getMessage(),null);
+            }
+        }
+        if (udpAudioSocket == null || udpAudioSocket.isClosed()) {
+            try {
+                udpAudioSocket = new DatagramSocket();
+                localAudioUdpPort = udpAudioSocket.getLocalPort();
+                System.out.println("Client UDP audio socket opened on port: " + localAudioUdpPort);
+            } catch (SocketException e) {
+                serrr("Error opening UDP audio socket for call: " + e.getMessage());
+                return new Response(false,"Error opening UDP audio socket for call: " + e.getMessage(),null );
+            }
+        }
+
+        // Get public addresses for both video and audio sockets via STUN
+        InetSocketAddress publicVideoAddress = getPublicAddress(udpVideoSocket);
+        InetSocketAddress publicAudioAddress = getPublicAddress(udpAudioSocket);
+
+        String myPublicVideoIp = publicVideoAddress != null ? publicVideoAddress.getAddress().getHostAddress() : null;
+        int myPublicVideoPort = publicVideoAddress != null ? publicVideoAddress.getPort() : -1;
+        String myPublicAudioIp = publicAudioAddress != null ? publicAudioAddress.getAddress().getHostAddress() : null;
+        int myPublicAudioPort = publicAudioAddress != null ? publicAudioAddress.getPort() : -1;
+
+
+        if (myPublicVideoIp == null || myPublicVideoPort == -1 || myPublicAudioIp == null || myPublicAudioPort == -1) {
+            serrr("Could not determine public video and/or audio IP/port via STUN. Cannot initiate video call.");
+            return new Response(false,"Could not determine public video and/or audio IP/port via STUN. Cannot initiate video call.",null);
+        }
+
+        // Send call initiation request to server with both IP/port pairs
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("target_user_id", targetUserId);
+        payload.put("sender_public_video_ip", myPublicVideoIp);
+        payload.put("sender_udp_video_port", myPublicVideoPort);
+        payload.put("sender_public_audio_ip", myPublicAudioIp); // NEW
+        payload.put("sender_udp_audio_port", myPublicAudioPort); // NEW
+
+        sendRequestAndAwaitResponse(new Request(Command.INITIATE_VIDEO_CALL, payload));
+        System.out.println("Video call initiation request sent to server for user: " + targetUserId +
+                " (Video: " + myPublicVideoIp + ":" + myPublicVideoPort +
+                ", Audio: " + myPublicAudioIp + ":" + myPublicAudioPort + ")");
+        return new Response(true,"Waiting For response......",payload.toString());
+    }
+
+    private static void serrr(String msg) {
+        System.err.println("-----["+Thread.currentThread().getName()+"][ChatClient] : "+ msg);
+    }
+    /**
+     * Starts both video and audio capture/receiver threads.
+     */
+    private void startMediaCallThreads() {
+        System.out.println("@@@@@ Starting Media Call Threads @@@@@");
+        System.out.println("Local Video UDP Port: " + udpVideoSocket.getLocalPort());
+        System.out.println("Local Audio UDP Port: " + udpAudioSocket.getLocalPort());
+        System.out.println("Remote Video IP: " + remoteVideoIp + ", Port: " + remoteVideoUdpPort);
+        System.out.println("Remote Audio IP: " + remoteAudioIp + ", Port: " + remoteAudioUdpPort);
+
+
+        // Initialize and start Video Capture/Receiver Threads
+        if (videoCaptureThread == null || !videoCaptureThread.isAlive()) {
+            videoCaptureThread = new VideoCaptureThread(udpVideoSocket, remoteVideoIp, remoteVideoUdpPort);
+            videoCaptureThread.start();
+        }
+        if (videoReceiverThread == null || !videoReceiverThread.isAlive()) {
+            videoReceiverThread = new VideoReceiverThread(udpVideoSocket);
+            videoReceiverThread.start();
+        }
+
+        // Initialize and start Audio Capture/Receiver Threads
+        if (audioCaptureThread == null || !audioCaptureThread.isAlive()) {
+            audioCaptureThread = new AudioCaptureThread(udpAudioSocket, remoteAudioIp, remoteAudioUdpPort);
+            audioCaptureThread.start();
+        }
+        if (audioReceiverThread == null || !audioReceiverThread.isAlive()) {
+            audioReceiverThread = new AudioReceiverThread(udpAudioSocket);
+            audioReceiverThread.start();
+        }
+
+        // Setup UI for video display
+        if (videoFrame == null) {
+            videoFrame = new JFrame("Video Call");
+            videoLabel = new JLabel();
+            videoFrame.add(videoLabel);
+            videoFrame.setSize(640, 480);
+            videoFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            videoFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    int confirm = JOptionPane.showConfirmDialog(videoFrame,
+                            "Are you sure you want to end the call?", "End Call?",
+                            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (confirm == JOptionPane.YES_OPTION) {
+                        // This will stop local threads. Server/peer notification needs to be handled
+                        // by explicitly calling endCurrentVideoCall(remoteUserId).
+                        System.out.println("User closed video window. Ending call locally. Remember to notify server/peer.");
+                        stopMediaCallThreads();
+                        videoFrame.dispose();
+                        videoFrame = null;
+                    }
+                }
+            });
+            videoFrame.setVisible(true);
+        } else {
+            videoFrame.setVisible(true);
+        }
+        videoReceiverThread.setVideoDisplayLabel(videoLabel);
+    }
+
+    /**
+     * Stops both video and audio capture/receiver threads.
+     */
+    private void stopMediaCallThreads() {
+        System.out.println("Stopping Media Call Threads...");
+        if (videoCaptureThread != null) {
+            videoCaptureThread.stopCapture();
+            videoCaptureThread.interrupt();
+            videoCaptureThread = null;
+        }
+        if (videoReceiverThread != null) {
+            videoReceiverThread.stopReceiving();
+            videoReceiverThread.interrupt();
+            videoReceiverThread = null;
+        }
+        if (audioCaptureThread != null) {
+            audioCaptureThread.stopCapture();
+            audioCaptureThread.interrupt();
+            audioCaptureThread = null;
+        }
+        if (audioReceiverThread != null) {
+            audioReceiverThread.stopReceiving();
+            audioReceiverThread.interrupt();
+            audioReceiverThread = null;
+        }
+
+        if (videoFrame != null) {
+            videoFrame.dispose();
+            videoFrame = null;
+            videoLabel = null;
+        }
+        System.out.println("Media call threads stopped and window closed.");
+    }
+
+    /**
+     * Sends an END_VIDEO_CALL request to the server.
+     * @param targetUserId The ID of the user with whom the call is to be ended.
+     */
+    public void endCurrentVideoCall(int targetUserId) {
+        if (currentUser != null && targetUserId != -1) {
+            Map<String, Object> payload = new HashMap<>();
+            payload.put("target_user_id", targetUserId);
+            sendRequestAndAwaitResponse(new Request(Command.END_VIDEO_CALL, payload));
+            System.out.println("Sent end call request to server for user: " + targetUserId);
+            stopMediaCallThreads();
+        } else {
+            System.out.println("Cannot end call: No current user or target user ID is unknown.");
+        }
+    }
+
+    /**
+     * Sends UDP punching packets for both video and audio streams.
+     */
+    private void sendUdpPunchingPackets() {
+        // Send punching packets for video stream
+        if (udpVideoSocket != null && !udpVideoSocket.isClosed() && remoteVideoIp != null) {
+            sendSingleUdpPunchingPacket(udpVideoSocket, remoteVideoIp, remoteVideoUdpPort, "Video");
+        } else {
+            System.err.println("Video UDP socket not ready for punching.");
+        }
+
+        // Send punching packets for audio stream
+        if (udpAudioSocket != null && !udpAudioSocket.isClosed() && remoteAudioIp != null) {
+            sendSingleUdpPunchingPacket(udpAudioSocket, remoteAudioIp, remoteAudioUdpPort, "Audio");
+        } else {
+            System.err.println("Audio UDP socket not ready for punching.");
+        }
+    }
+
+    /**
+     * Helper method to send a single set of UDP punching packets.
+     */
+    private void sendSingleUdpPunchingPacket(DatagramSocket socket, InetAddress remoteIp, int remoteUdpPort, String streamType) {
+        try {
+            byte[] data = new byte[1]; // Minimal data
+            DatagramPacket packet = new DatagramPacket(data, data.length, remoteIp, remoteUdpPort);
+            for (int i = 0; i < 5; i++) {
+                socket.send(packet);
+                // System.out.println("Sent " + streamType + " UDP punching packet " + (i + 1) + " to " + remoteIp.getHostAddress() + ":" + remoteUdpPort);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+            System.out.println("Sent " + streamType + " UDP punching packets to " + remoteIp.getHostAddress() + ":" + remoteUdpPort);
+        } catch (IOException e) {
+            System.err.println("Error sending " + streamType + " UDP punching packet: " + e.getMessage());
+        }
     }
 }
