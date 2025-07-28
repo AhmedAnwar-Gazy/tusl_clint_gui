@@ -120,10 +120,21 @@ public class UserCardController implements Initializable,Controller {
                 }
             }
         };
-
-
+        startCall.setOnSucceeded(abc->{
+            if(startCall.getValue().isSuccess()){
+                soutt("Success Calling...........");
+            }else{
+                serrr("Error In Calling E-MSG: "+startCall.getValue().getMessage());
+            }
+        });
+        Executor.submit(startCall);
     }
-
+    public static void soutt(String msg){
+        System.out.println("----- ["+Thread.currentThread().getName()+"][UserCardController] : "+ msg);
+    }
+    public static void serrr(String msg){
+        System.err.println("----- ["+Thread.currentThread().getName()+"][UserCardController] : "+ msg);
+    }
     public void handleAudioCallButtonAction(ActionEvent event) {
 
     }
