@@ -223,3 +223,106 @@ Add Multiple Chats                      : Executions: 1, Avg: 12.00 ms, Max: 12 
 Add/Update User                         : Executions: 27, Avg: 0.22 ms, Max: 2 ms
 
 [2025-07-25 00:37:46.617] DataModel shutdown completed
+[2025-07-25 16:42:42.376] DataModel initialized
+[2025-07-25 16:42:43.854] Chat not found: 8
+[2025-07-25 16:42:43.857] Chat not found: 8
+[2025-07-25 16:42:43.857] Chat not found: 14
+[2025-07-25 16:42:43.858] Chat not found: 16
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.859] Chat not found: 19
+[2025-07-25 17:30:51.361] DataModel initialized
+[2025-07-25 17:34:40.660] DataModel initialized
+[2025-07-25 17:35:57.942] DataModel initialized
+[2025-07-25 17:38:21.366] DataModel initialized
+[2025-07-25 17:38:22.078] Chat not found: 19
+[2025-07-25 18:12:02.804] DataModel initialized
+[2025-07-25 18:13:22.210] DataModel initialized
+[2025-07-25 18:15:49.363] DataModel initialized
+[2025-07-25 18:15:50.044] Chat not found: 2
+[2025-07-25 18:15:50.046] Chat not found: 2
+[2025-07-25 18:15:50.047] Chat not found: 2
+[2025-07-25 18:16:16.694] DataModel initialized
+[2025-07-25 18:19:43.482] DataModel initialized
+[2025-07-25 18:26:29.970] DataModel initialized
+[2025-07-25 18:27:36.201] DataModel initialized
+[2025-07-25 18:28:50.972] DataModel initialized
+[2025-07-26 23:02:56.081] DataModel initialized
+[2025-07-26 23:03:23.111] DataModel initialized
+[2025-07-26 23:07:28.190] DataModel initialized
+[2025-07-26 23:07:58.662] DataModel initialized
+[2025-07-26 23:09:04.575] DataModel initialized
+[2025-07-26 23:12:02.532] DataModel initialized
+[2025-07-26 23:13:04.355] DataModel initialized
+[2025-07-26 23:17:32.302] DataModel initialized
+[2025-07-26 23:18:10.973] DataModel initialized
+[2025-07-26 23:18:37.592] DataModel initialized
+[2025-07-27 00:12:02.490] DataModel initialized
+[2025-07-27 02:28:46.053] DataModel initialized
+[2025-07-27 02:32:23.510] DataModel initialized
+[2025-07-27 02:46:05.978] DataModel initialized
+[2025-07-27 02:47:09.213] DataModel initialized
+[2025-07-27 02:50:25.499] DataModel initialized
+[2025-07-27 02:53:02.471] DataModel initialized
+[2025-07-27 02:54:31.244] DataModel initialized
+[2025-07-27 02:55:28.621] DataModel initialized
+[2025-07-27 02:56:16.263] DataModel initialized
+[2025-07-27 02:56:49.020] DataModel initialized
+[2025-07-27 02:57:47.883] DataModel initialized
+[2025-07-27 02:59:23.487] DataModel initialized
+[2025-07-27 03:00:43.621] DataModel initialized
+[2025-07-27 03:02:59.473] DataModel initialized
+[2025-07-27 03:04:01.866] DataModel initialized
+[2025-07-27 03:05:10.210] DataModel initialized
+[2025-07-27 03:06:55.571] DataModel initialized
+[2025-07-27 03:08:14.679] DataModel initialized
+[2025-07-27 03:10:08.476] DataModel initialized
+[2025-07-27 03:12:03.022] DataModel initialized
+[2025-07-27 03:14:35.649] DataModel initialized
+[2025-07-27 03:17:08.084] DataModel initialized
+[2025-07-27 03:19:07.832] DataModel initialized
+[2025-07-27 03:21:18.293] DataModel initialized
+[2025-07-27 03:25:03.731] DataModel initialized
+[2025-07-27 03:28:46.013] DataModel initialized
+[2025-07-27 03:30:53.349] DataModel initialized
+[2025-07-27 03:36:57.516] DataModel initialized
+[2025-07-27 03:37:44.351] DataModel initialized
+[2025-07-27 03:39:47.916] DataModel initialized
+[2025-07-27 03:41:47.716] DataModel initialized
+[2025-07-27 03:45:02.922] DataModel initialized
+[2025-07-27 03:47:18.724] DataModel initialized
+[2025-07-27 03:51:52.078] DataModel initialized
+[2025-07-27 03:53:58.040] DataModel initialized
+[2025-07-27 03:58:08.856] DataModel initialized
+[2025-07-27 12:47:15.481] DataModel initialized
+[2025-07-27 12:50:04.836] DataModel initialized
+[2025-07-27 12:51:07.149] DataModel initialized
+[2025-07-27 13:01:53.270] DataModel initialized
+[2025-07-27 13:08:30.872] DataModel initialized
+[2025-07-27 13:11:10.501] DataModel initialized
+[2025-07-27 13:17:43.357] DataModel initialized
+[2025-07-27 13:18:57.277] DataModel initialized
+[2025-07-27 13:21:59.638] DataModel initialized
+[2025-07-27 13:22:30.289] DataModel initialized
+[2025-07-27 13:25:17.725] DataModel initialized
+[2025-07-27 13:27:45.300] DataModel initialized
+[2025-07-27 13:29:33.765] DataModel initialized
+[2025-07-27 13:30:37.708] DataModel initialized
+[2025-07-27 13:31:18.793] DataModel initialized
+[2025-07-27 13:31:44.770] DataModel initialized
+[2025-07-27 13:32:29.010] DataModel initialized
+[2025-07-27 13:32:55.624] DataModel initialized
+[2025-07-27 13:33:15.319] DataModel initialized
+[2025-07-27 13:33:35.967] DataModel initialized
+[2025-07-27 13:33:52.308] DataModel initialized
+[2025-07-27 13:34:18.605] DataModel initialized
+[2025-07-27 13:34:39.820] DataModel initialized
+[2025-07-27 13:35:18.422] DataModel initialized
+[2025-07-27 13:35:37.864] DataModel initialized
+[2025-07-27 13:36:27.744] DataModel initialized
+[2025-07-27 13:37:55.459] DataModel initialized
+[2025-07-27 13:42:07.696] DataModel initialized
+[2025-07-27 13:44:34.341] DataModel initialized
+[2025-07-27 13:47:10.766] DataModel initialized
+[2025-07-27 13:47:11.342] Chat not found: 16

@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -16,7 +17,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
-public class AudioController implements Initializable {
+public class AudioController implements Initializable,Controller {
 
     @FXML
     private Button audioButon; // The transparent button for play/pause
@@ -28,6 +29,8 @@ public class AudioController implements Initializable {
     private Label audioSize; // Label for audio file size
     @FXML
     private StackPane playButtonContainer; // The StackPane holding the circle and button, where we'll add icons
+    @FXML
+    private HBox mainContainer; // The StackPane holding the circle and button, where we'll add icons
 
     private MediaPlayer mediaPlayer;
     private SVGPath playIcon;
@@ -220,5 +223,12 @@ public class AudioController implements Initializable {
             mediaPlayer.dispose();
             mediaPlayer = null;
         }
+    }
+    private StackPane mainView;
+    @Override
+    public StackPane getView() {
+        if(mainView == null)
+            mainView = new StackPane(mainContainer);
+        return mainView;
     }
 }

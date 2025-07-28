@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.UserCardController">
+   <children>
+      <HBox fx:id="userInfoHboxContainer" alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#handleItemClicked">
+         <children>
+            <HBox>
+               <children>
+                  <ImageView fx:id="userImage" fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Send%20icon_files/3135715.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="userNameLabel" text="User Name" />
+                        <Label fx:id="userPhoneLabel" text="User Phone Number" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Region maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" />
+            <CheckBox fx:id="checkedItem" mnemonicParsing="false" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+   </children>
+</StackPane>

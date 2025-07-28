@@ -10,10 +10,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import orgs.tuasl_clint.models2.FactoriesSQLite.MediaFactory;
 import orgs.tuasl_clint.models2.Media;
 import orgs.tuasl_clint.models2.Message;
 import orgs.tuasl_clint.utils.BackendThreadManager.DataModel;
@@ -25,9 +25,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.sql.SQLException;
 
-public class SendMessageItemController {
+public class SendMessageItemController implements Controller {
 
     @FXML
     private VBox VboxMessage;
@@ -72,6 +71,8 @@ public class SendMessageItemController {
     private Label timeLabel;
 
     private final ObjectProperty<Message> message = new SimpleObjectProperty<>();
+    private final ObjectProperty<Controller> mediaController = new SimpleObjectProperty<>();
+
     private static synchronized void soutt(String msg){
         System.out.println("----- ["+Thread.currentThread().getName()+"][SendMessageController] : "+msg);
     }
@@ -110,8 +111,6 @@ public class SendMessageItemController {
             else
                 return "--:--";
         },message));
-
-//        emojiLabel.setText(message.getMessageType());
         //ENUM('text', 'image', 'video', 'voiceNote', 'file', 'system')
         switch (FilesHelper.toMediaType(message.get().getMessageType())){
             case TEXT:
@@ -295,7 +294,7 @@ public class SendMessageItemController {
             }
 
         } catch (Exception e) {
-            showErrorAlert("Video Error", "Failed to load video: " + e.getMessage());
+            showErrorAlert("Video Error", "Failed to load video: " + e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }
@@ -353,8 +352,8 @@ public class SendMessageItemController {
             soutt("Cannot Convert Url Into URI ........................!!!!!!!!!!!!");
         }
     }
-    private void showErrorAlert(String title, String message) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+    private void showErrorAlert(String title, String message, Alert.AlertType type ) {
+            Alert alert = new Alert(type);
             alert.setTitle(title);
             alert.setHeaderText(null);
             alert.setContentText(message);
@@ -399,8 +398,11 @@ public class SendMessageItemController {
         this.reactionsContainer.setVisible(false);
     }
 
-
-    public VBox getView() {
-        return this.VboxMessage;
+    private StackPane mainView;
+    @Override
+    public StackPane getView() {
+        if(mainView == null)
+            mainView = new StackPane(VboxMessage);
+        return mainView;
     }
 }

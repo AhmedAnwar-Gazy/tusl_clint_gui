@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.SVGPath?> <HBox alignment="CENTER_LEFT" maxWidth="400" spacing="10" style="-fx-background-color: #e0f2f7; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.AudioController" >
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<HBox fx:id="mainContainer" alignment="CENTER_LEFT" maxWidth="400" spacing="10" style="-fx-background-color: #e0f2f7; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orgs.tuasl_clint.controllers.AudioController">
     <padding>
         <Insets bottom="10" left="15" right="15" top="10" />
     </padding>
@@ -25,5 +22,5 @@
             <Label fx:id="audioTime" style="-fx-font-size: 11px; -fx-text-fill: #616161;" text="00:00 / 00:00" /> <Label fx:id="audioSize" style="-fx-font-size: 11px; -fx-text-fill: #616161;" text="0 KB" /> </HBox>
     </VBox>
 
-    <Label text="12:48 AM" style="-fx-font-size: 10px; -fx-text-fill: #9E9E9E;"/>
+    <Label style="-fx-font-size: 10px; -fx-text-fill: #9E9E9E;" text="12:48 AM" />
 </HBox>
