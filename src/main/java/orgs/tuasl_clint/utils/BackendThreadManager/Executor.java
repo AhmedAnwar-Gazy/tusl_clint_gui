@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Executor {
-    private static final ExecutorService  executorService = Executors.newFixedThreadPool(1);
+    private static final ExecutorService  executorService = Executors.newFixedThreadPool(5);
 
     public static synchronized ExecutorService getExecutor(){
         return executorService;

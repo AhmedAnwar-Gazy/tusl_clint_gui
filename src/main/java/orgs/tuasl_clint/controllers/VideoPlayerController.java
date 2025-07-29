@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.jar.JarOutputStream;
 
-public class VideoPlayerController implements Initializable {
+public class VideoPlayerController implements Initializable,Controller {
 
     @FXML
     private StackPane videoPlayerContainer; // Root container for mouse events and fullscreen
@@ -413,6 +413,11 @@ public class VideoPlayerController implements Initializable {
             mediaPlayer.dispose();
             mediaPlayer = null;
         }
+    }
+
+    @Override
+    public StackPane getView() {
+        return videoPlayerContainer;
     }
 }
 

@@ -10,10 +10,9 @@ import javafx.collections.ObservableMap;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import org.jetbrains.annotations.NotNull;
 import orgs.tuasl_clint.client.*;
-import orgs.tuasl_clint.controllers.ChatController;
-import orgs.tuasl_clint.controllers.ChatListItemController;
-import orgs.tuasl_clint.controllers.SendMessageItemController;
+import orgs.tuasl_clint.controllers.*;
 import orgs.tuasl_clint.models2.*;
 import orgs.tuasl_clint.models2.FactoriesSQLite.*;
 import orgs.tuasl_clint.protocol.Response;
@@ -273,6 +272,74 @@ public class DataModel implements
                     String errorMsg = operation + " failed: " + e.getMessage();
                     DiagnosticLogger.log(LOG_FILE, errorMsg);
                     serrr(errorMsg + " | Message: " + message.toString());
+                    return null;
+                } finally {
+                    long duration = System.currentTimeMillis() - startTime;
+                    DiagnosticLogger.logOperationDetails(
+                            LOG_FILE,
+                            operation,
+                            details,
+                            startTime
+                    );
+                    DataModel.getInstance().recordPerformance(operation, duration);
+                }
+            }
+        };
+    }
+    public static Task<UserCardController> createUserCardControllerTask(@NotNull ObjectProperty<User> user) {
+        return new Task<>() {
+            @Override
+            protected UserCardController call() {
+                long startTime = System.currentTimeMillis();
+                String operation = "Create User Card List Item";
+                String details = "User : " + user.get().toString();
+                try {
+                    // Simulate controller creation
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/orgs/tuasl_clint/fxml/userCard.fxml"));
+                    Parent userCardNode = loader.load();
+                    UserCardController controller = loader.getController();
+                    controller.setData(user);
+                    return controller;
+                } catch (Exception e) {
+                    serrr("Cannot Create User List Item .... Error : " + e.getMessage());
+                    serrr("Message Is : " + user.get().toString());
+                    String errorMsg = operation + " failed: " + e.getMessage();
+                    DiagnosticLogger.log(LOG_FILE, errorMsg);
+                    serrr(errorMsg + " | User : " + user.get().toString());
+                    return null;
+                } finally {
+                    long duration = System.currentTimeMillis() - startTime;
+                    DiagnosticLogger.logOperationDetails(
+                            LOG_FILE,
+                            operation,
+                            details,
+                            startTime
+                    );
+                    DataModel.getInstance().recordPerformance(operation, duration);
+                }
+            }
+        };
+    }
+    public static Task<AddParticipantController> createAddChatParticipantControllerTask(@NotNull int chat_id) {
+        return new Task<>() {
+            @Override
+            protected AddParticipantController call() {
+                long startTime = System.currentTimeMillis();
+                String operation = "Create Add Participant View";
+                String details = "Chat_id : " + chat_id;
+                try {
+                    // Simulate controller creation
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/orgs/tuasl_clint/fxml/AddParticipant.fxml"));
+                    Parent userCardNode = loader.load();
+                    AddParticipantController controller = loader.getController();
+                    controller.setDataChatID(chat_id);
+                    return controller;
+                } catch (Exception e) {
+                    serrr("Cannot Create Add Participant View .... Error : " + e.getMessage());
+                    serrr("Chat_ID Is : " + chat_id);
+                    String errorMsg = operation + " failed: " + e.getMessage();
+                    DiagnosticLogger.log(LOG_FILE, errorMsg);
+                    serrr(errorMsg + " | Chat_ID : " + chat_id);
                     return null;
                 } finally {
                     long duration = System.currentTimeMillis() - startTime;
@@ -823,6 +890,18 @@ public class DataModel implements
     public ChatParticipant getChatParticipant(long chatId, long participantId) {
         ObjectProperty<ChatParticipant> participantProp = getChatParticipantProperty(chatId, participantId);
         return participantProp != null ? participantProp.get() : null;
+    }
+
+    public static Task<Controller> createMediaItemControllerTask(Media media){
+        return new Task<Controller>() {
+            @Override
+            protected Controller call() throws Exception {
+//                switch (media.getMediaType()){
+//
+//                };
+                return null;
+            }
+        };
     }
 
     public boolean removeChatParticipant(long chatId, long participantId) {

@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import orgs.tuasl_clint.utils.FilesHelper;
 
 import java.awt.*;
@@ -16,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FileItemController implements Initializable {
+public class FileItemController implements Initializable,Controller {
 
     File file;
 
@@ -60,6 +61,13 @@ public class FileItemController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonsContainer.getChildren().remove(openButton);
+    }
+    private StackPane mainView;
+    @Override
+    public StackPane getView() {
+        if(mainView == null)
+            mainView = new StackPane(mainAllContainer);
+        return mainView;
     }
 
     public interface Action{

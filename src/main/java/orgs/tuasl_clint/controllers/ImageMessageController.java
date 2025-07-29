@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import org.bytedeco.libfreenect._freenect_device;
 
 import java.awt.*;
@@ -20,11 +21,12 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ImageMessageController implements Initializable {
+public class ImageMessageController implements Initializable,Controller {
 
     @FXML
     private ImageView imageView;
-
+    @FXML
+    private HBox mainContainer;
 
 
     // Default image path for demonstration
@@ -92,5 +94,11 @@ public class ImageMessageController implements Initializable {
             }
         }
     }
-
+    private StackPane mainView;
+    @Override
+    public StackPane getView() {
+        if(mainView == null)
+            mainView = new StackPane(mainContainer);
+        return mainView;
+    }
 }

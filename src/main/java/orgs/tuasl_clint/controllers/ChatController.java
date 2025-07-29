@@ -19,8 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
@@ -55,8 +54,6 @@ import javax.swing.*;
 
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.BorderPane;
 import orgs.tuasl_clint.utils.BackendThreadManager.*;
 
 import static java.lang.System.exit;
@@ -66,10 +63,18 @@ public class ChatController{
     public VBox chatsMainContainer;
     @FXML
     public HBox menuItemContainer;
-    @FXML
-    public VBox leftMainAllContainer;
+//    @FXML
+//    public VBox leftMainAllContainer;
     @FXML
     public TextField searchTF;
+    @FXML
+    public StackPane leftMainStackPane;
+    @FXML
+    public Button addParticipantButton;
+    @FXML
+    public StackPane centerStackPane;
+    @FXML
+    public BorderPane centerChatChatting;
     @FXML
     private BorderPane rootBorderPane;
     @FXML
@@ -169,7 +174,7 @@ public class ChatController{
                     @Override
                     public void onComplete(File file) {
                         soutt("---- Message Sent SuccessFully----- ["+Thread.currentThread().getName()+"] : -");
-                        dataModel.addMessageToChat(mm);
+                        Platform.runLater(()->dataModel.addMessageToChat(mm));
                     }
                 });
             });
@@ -291,6 +296,8 @@ public class ChatController{
                     Parent p = task.getValue();
                     if(p != null)
                         message_media_selected_container.getChildren().addFirst(task.getValue());
+                    else
+                        soutt("Cannot Create File Item Controller For Selected File");
                 });
                 Executor.submit(task);
             }
@@ -350,8 +357,10 @@ public class ChatController{
                 menu_bageControler.setOnGoBackButtonClickListener(new menu_bageControler.OnGoBackButtonClickListener() {
                     @Override
                     public void onGoBackButtonClickListener() {
-                        leftMainAllContainer.getChildren().remove(menuItemContainer);
-                        leftMainAllContainer.getChildren().add(chatsMainContainer);
+                        menuItemContainer.setVisible(false);
+                        menuItemContainer.setManaged(false);
+                        chatsMainContainer.setVisible(true);
+                        chatsMainContainer.setManaged(true);
                     }
                 });
                 this.menuItemContainer.getChildren().add(menu_bageRootVbox);
@@ -359,10 +368,10 @@ public class ChatController{
                 throw new RuntimeException(e);
             }
         }
-        this.leftMainAllContainer.getChildren().remove(chatsMainContainer);
-        if (!this.leftMainAllContainer.getChildren().contains(this.menuItemContainer)) {
-            this.leftMainAllContainer.getChildren().add(this.menuItemContainer);
-        }
+        menuItemContainer.setVisible(true);
+        menuItemContainer.setManaged(true);
+        chatsMainContainer.setManaged(false);
+        chatsMainContainer.setVisible(false);
     }
 
     private final String SHARE_FOLDER = "src/main/resources/orgs/tuasl_clint/file/";
@@ -374,6 +383,8 @@ public class ChatController{
         Stage stage = (Stage) shareButton.getScene().getWindow();
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null) {
+            soutt("Selected path : "+selectedFile.getPath());
+            soutt("File Viewer Path To Show is : "+ FilesHelper.getMediaViewerPath(selectedFile));
             this.setMediaFile(selectedFile, new FileItemController.Action() {
                 @Override
                 public void OnDeleteAction() {
@@ -488,63 +499,81 @@ public class ChatController{
         return emojiLabel;
     }
 
-    @FXML
-    public void handleAudioCallButtonAction(ActionEvent event) {
-        Chat selectedUser =currentChat.get();
-        if (selectedUser == null) {
-            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
-            return;
-        }
-
-        try {
-            // مثال: IP الطرف الآخر هو 192.168.1.100 و البورت 7711
-            String remoteIP = "localhost";
-            int remotePort = 7711;
-
-            // توليد بورت عشوائي للاستقبال
-            DatagramSocket tempSocket = new DatagramSocket(0);
-            int localPort = tempSocket.getLocalPort();
-            tempSocket.close();
-
-            AudioCallWindow audioCallWindow = new AudioCallWindow("📞 مع " + selectedUser);
-            AudioSendUDP sender = new AudioSendUDP();
-            sender.start(remoteIP, remotePort);
-
-            AudioReceiverUDP receiver = new AudioReceiverUDP();
-            receiver.start(localPort); // استقبل على نفس البورت
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("❌ فشل الاتصال بمكالمة الصوت");
-        }
-    }
-
-
-    @FXML
-    public void handleVideoCallButtonAction(ActionEvent event) {
-        Chat selectedUser = currentChat.get();
-        if (selectedUser == null) {
-            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
-            return;
-        }
-
-        try {
-            String remoteIP = "localhost";          // أو IP الجهاز الآخر
-            int remoteVideoPort = 8811;             // هذا بورت السيرفر الثابت
-
-            VideoCallWindowUDP callWindow = new VideoCallWindowUDP("📹 مكالمة فيديو مع " + selectedUser);
-            callWindow.startSending(remoteIP, remoteVideoPort);  // إرسال للفيديو
-            callWindow.startReceiving();                         // استقبال على بورت عشوائي
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("❌ فشل الاتصال بالفيديو");
-        }
-    }
+//    @FXML
+//    public void handleAudioCallButtonAction(ActionEvent event) {
+//        Chat selectedUser =currentChat.get();
+//        if (selectedUser == null) {
+//            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
+//            return;
+//        }
+//
+//        try {
+//            // مثال: IP الطرف الآخر هو 192.168.1.100 و البورت 7711
+//            String remoteIP = "localhost";
+//            int remotePort = 7711;
+//
+//            // توليد بورت عشوائي للاستقبال
+//            DatagramSocket tempSocket = new DatagramSocket(0);
+//            int localPort = tempSocket.getLocalPort();
+//            tempSocket.close();
+//
+//            AudioCallWindow audioCallWindow = new AudioCallWindow("📞 مع " + selectedUser);
+//            AudioSendUDP sender = new AudioSendUDP();
+//            sender.start(remoteIP, remotePort);
+//
+//            AudioReceiverUDP receiver = new AudioReceiverUDP();
+//            receiver.start(localPort); // استقبل على نفس البورت
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("❌ فشل الاتصال بمكالمة الصوت");
+//        }
+//    }
+//
+//
+//    @FXML
+//    public void handleVideoCallButtonAction(ActionEvent event) {
+//        Chat selectedUser = currentChat.get();
+//        if (selectedUser == null) {
+//            System.out.println("❌ لم يتم اختيار مستخدم لإجراء المكالمة");
+//            return;
+//        }
+//
+//        try {
+//            String remoteIP = "localhost";          // أو IP الجهاز الآخر
+//            int remoteVideoPort = 8811;             // هذا بورت السيرفر الثابت
+//
+//            VideoCallWindowUDP callWindow = new VideoCallWindowUDP("📹 مكالمة فيديو مع " + selectedUser);
+//            callWindow.startSending(remoteIP, remoteVideoPort);  // إرسال للفيديو
+//            callWindow.startReceiving();                         // استقبال على بورت عشوائي
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("❌ فشل الاتصال بالفيديو");
+//        }
+//    }
 
 
     public void handleAddParticipantButtonClicked(ActionEvent event) {
-
+        soutt("Loading Add Participant View .......");
+        var task = DataModel.createAddChatParticipantControllerTask(((int) currentChat.get().getId()));
+        task.setOnSucceeded(abc->{
+            soutt("View Controller Loaded........");
+            var controller = task.getValue();
+            if(controller != null){
+                var view = controller.getView();
+                this.centerStackPane.getChildren().addLast(view);
+                centerChatChatting.setVisible(false);
+                controller.setOnCancel(() -> {
+                    centerChatChatting.setVisible(true);
+                    this.centerStackPane.getChildren().remove(view);
+                });
+            }else {
+                serrr("cannot Load Add Participant For This Chat..........");
+                JOptionPane.showMessageDialog(null,"Cannot Open An Add Participant View.....!!");
+            }
+        });
+        Executor.submit(task);
     }
 
 
@@ -553,16 +582,21 @@ public class ChatController{
     private final DataModel dataModel = DataModel.getInstance();
 
     public void initialize() {
+        menuItemContainer.setVisible(false);
+        menuItemContainer.setManaged(false);
+        this.addParticipantButton.visibleProperty().bind(Bindings.createBooleanBinding(() -> currentChat.get() != null,currentChat));
         dataModel.setNewMessageReceivedListener(new OnNewMessageListener() {
             @Override
             public void onNewMessageReceived(Message message) {
-                if(currentChat.get().getId() == message.getChatId()){
+                if(currentChat.get() != null && currentChat.get().getId() == message.getChatId()){
                     var controller = dataModel.getSendMessageItemControllerOf(message);
                     if(controller != null && controller.get() != null)
                         messageDisplayArea.getChildren().add(controller.get().getView());
                 }
             }
         });
+        this.emojiScrollPane.setManaged(false);
+        this.emojiScrollPane.setVisible(false);
         setupChatsList();
         setupCurrentChatBinding();
         setupMessagesBinding();

@@ -1,97 +1,144 @@
 package orgs.tuasl_clint.controllers;
 
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import orgs.tuasl_clint.client.ChatClient;
-import orgs.tuasl_clint.client.OnAllUsersRetrievedListener;
-import orgs.tuasl_clint.client.OnCommandResponseListener;
-import orgs.tuasl_clint.client.OnUserRetrievedListener;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import orgs.tuasl_clint.client.*;
+import orgs.tuasl_clint.models2.ChatParticipant;
 import orgs.tuasl_clint.protocol.Response;
 import orgs.tuasl_clint.models2.User;
+import orgs.tuasl_clint.utils.BackendThreadManager.DataModel;
+import orgs.tuasl_clint.utils.BackendThreadManager.Executor;
 
 import java.net.URL;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddParticipantController implements Initializable,
-        OnAllUsersRetrievedListener, OnCommandResponseListener, OnUserRetrievedListener {
+        OnAllUsersRetrievedListener, OnCommandResponseListener, OnUserRetrievedListener , OnChatParticipantsRetrievedListener, Controller{
 
+    @FXML public VBox mainContainer;
+    @FXML public Button cancelButton;
     @FXML private TextField searchTextField;
-    @FXML private ListView<User> userListView; // Or a custom UserCellFactory for better display
+    @FXML private ListView<ObjectProperty<User>> userListView; // Or a custom UserCellFactory for better display
     @FXML private Label feedbackLabel;
     @FXML private Button addParticipantsButton;
     @FXML private Label groupInfoLabel; // If you decide to use it
 
-    private ChatClient chatClient;
-    private ObservableList<User> allUsers = FXCollections.observableArrayList();
+    private ChatClient chatClient = ChatClient.getInstance();
+
+    private ObservableList<ObjectProperty<User>> allUsers = FXCollections.observableArrayList();
+    private ListProperty<ObjectProperty<User>> selectedUsers = new SimpleListProperty<>();
+    private SortedList<ObjectProperty<User>> sortedList = new SortedList<>(allUsers);
+
     private int targetChatId; // This would be passed when opening this view
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        chatClient = ChatClient.getInstance();
-        chatClient.addOnAllUsersRetrievedListener(this);
-        chatClient.addOnCommandResponseListener(this);
-        chatClient.addOnUserRetrievedListener(this); // For single user search
-
-        userListView.setItems(allUsers);
-        userListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE); // Allow selecting multiple users
-
-        // Set a custom cell factory to display user names nicely
-        userListView.setCellFactory(param -> new javafx.scene.control.ListCell<User>() {
-            @Override
-            protected void updateItem(User user, boolean empty) {
-                super.updateItem(user, empty);
-                if (empty || user == null) {
-                    setText(null);
-                } else {
-                    setText(user.getFirstName() + " " + user.getLastName() + " (" + user.getPhoneNumber() + ")");
+        soutt("Initializing The Add Participant View");
+        userListView.itemsProperty().bind(Bindings.createObjectBinding(() -> {
+            soutt("Binding Work Now .....");
+            allUsers.forEach(item->soutt("Item : "+item.get().toString()));
+            return sortedList.filtered(user -> {
+                return (String.valueOf(user.get().getId()).toLowerCase().contains(searchTextField.getText().toLowerCase())) ||
+                        ((user.get().getUsername() != null ?user.get().getUsername().toLowerCase() : "").contains(searchTextField.getText().toLowerCase())) ||
+                        ((user.get().getFirstName() != null ? user.get().getFirstName().toLowerCase() :"").contains(searchTextField.getText().toLowerCase())) ||
+                        ((user.get().getLastName() != null ? user.get().getLastName().toLowerCase() : "").contains(searchTextField.getText().toLowerCase()));
+            }).sorted((o1,o2)->{
+                if (selectedUsers.contains(o1) && !selectedUsers.contains(o2))
+                    return -1;
+                else {
+                    return 0;
                 }
-            }
-        });
+            });
+        },sortedList,searchTextField.textProperty()));
 
-        // Add listener for search input
-        searchTextField.textProperty().addListener((obs, oldText, newText) -> {
-            if (newText.isEmpty()) {
-                // If search box is empty, show all users (or clear list)
-                // For now, let's re-fetch all users or display previously fetched ones
-                new Thread(() -> chatClient.getAllUsers()).start();
-            } else {
-                // Implement search logic:
-                // You might search by phone number, name, or ID
-                // For simplicity, let's assume searching by phone number for now.
-                // In a real app, you'd likely have a more sophisticated server-side search.
-                new Thread(() -> {
-                    // Try to parse as ID first, then search by phone number/name
-                    try {
-                        int userId = Integer.parseInt(newText);
-                        chatClient.getUserById(userId);
-                    } catch (NumberFormatException e) {
-                        chatClient.getUserByPhoneNumber(newText); // Assume this searches by phone or name
+        userListView.setCellFactory(param -> new ListCell<ObjectProperty<User>>() {
+            @Override
+            protected void updateItem(ObjectProperty<User> user, boolean empty) {
+                super.updateItem(user, empty);
+                if(user!= null &&  user.get() == null || empty)
+                    return;
+                var task = DataModel.createUserCardControllerTask(user);
+                soutt("Loading The Item To The View........Partiipants");
+                task.setOnSucceeded(abc->{
+                    var controller = task.getValue();
+                    if(controller != null){
+                        controller.getCheckedItem().selectedProperty().bind(Bindings.createBooleanBinding(() ->{ return selectedUsers.contains(user);},selectedUsers));
+                        controller.setOnClickListener(() ->{
+                            if(selectedUsers.contains(user))
+                                selectedUsers.remove(user);
+                            else
+                                selectedUsers.add(user);
+                        });
+                    }else {
+                        serrr("Error The UserCard Loaded For User : "+ user.get().toString()+" Is Null");
                     }
-                }).start();
+                    setGraphic(task.getValue()!= null? task.getValue().getView():null);
+                });
+                Executor.submit(task);
             }
         });
 
-        // Initial fetch of all users when the view loads
-        new Thread(() -> chatClient.getAllUsers()).start();
+//        searchTextField.textProperty().addListener((observableValue, oldVal, newVal) -> {
+//            userListView.getItems().clear();
+//            userListView.getItems().addAll(allUsers.filtered(user -> {
+//                return (String.valueOf(user.get().getId()).toLowerCase().contains(newVal.toLowerCase())) ||
+//                    (user.get().getUsername().toLowerCase().contains(newVal.toLowerCase())) ||
+//                    (user.get().getFirstName().toLowerCase().contains(newVal.toLowerCase())) ||
+//                    (user.get().getLastName().toLowerCase().contains(newVal.toLowerCase()));
+//            }).sorted(new Comparator<ObjectProperty<User>>() {
+//                @Override
+//                public int compare(ObjectProperty<User> o1, ObjectProperty<User> o2) {
+//                    if (selectedUsers.contains(o1) && !selectedUsers.contains(o2))
+//                        return -1;
+//                    else {
+//                        return 1;
+//                    }
+//                }
+//            }));
+//        });
 
-        // Example of setting targetChatId (you'd pass this from the previous scene)
-        // setTargetChatId(1); // Replace with actual chat ID
+
+        Executor.execute(()->{
+            chatClient.addOnAllUsersRetrievedListener(this);
+            chatClient.addOnCommandResponseListener(this);
+            chatClient.addOnUserRetrievedListener(this); // For single user search
+            chatClient.addOnChatParticipantsRetrievedListener(this);
+            chatClient.getAllUsers();
+        });
     }
 
     // Method to set the target chat ID when the scene is loaded/displayed
-    public void setTargetChatId(int chatId) {
+    public void setDataChatID(int chatId) {
         this.targetChatId = chatId;
+        chatClient.getChatParticipants(chatId);
         groupInfoLabel.setText("To Group: Chat ID " + chatId);
         groupInfoLabel.setVisible(true);
     }
 
+    private static void soutt(String msg){
+        System.out.println("-----["+Thread.currentThread().getName()+"][AddParticipantController]  : "+ msg);
+    }
+    private static void serrr(String msg){
+        System.err.println("-----["+Thread.currentThread().getName()+"][AddParticipantController]  : "+ msg);
+    }
     @FXML
     private void handleAddParticipants() {
-        ObservableList<User> selectedUsers = userListView.getSelectionModel().getSelectedItems();
         if (selectedUsers.isEmpty()) {
             feedbackLabel.setText("Please select at least one user to add.");
             feedbackLabel.getStyleClass().setAll("feedback-label");
@@ -99,12 +146,15 @@ public class AddParticipantController implements Initializable,
         }
 
         // Add each selected user to the chat
-        for (User user : selectedUsers) {
-            new Thread(() -> {
-                // Default role can be "member" or based on UI selection
-                Response response = chatClient.addChatParticipant(targetChatId,(int) user.getId(), "member");
-                // The onCommandResponse listener will handle feedback
-            }).start();
+        for (var user1 : selectedUsers) {
+            Executor.execute(()->{
+                Response response = chatClient.addChatParticipant(targetChatId,(int) user1.get().getId(), "member");
+                if(response.isSuccess()){
+                    soutt("Success Adding A participant : "+user1.get().toString());
+                }
+                else
+                    serrr("Cannot Add the Participant : "+ user1.get().toString()+"\n            Response : "+ response.toString());
+            });
         }
         feedbackLabel.setText("Adding selected participants...");
         feedbackLabel.getStyleClass().setAll("success-label");
@@ -114,30 +164,26 @@ public class AddParticipantController implements Initializable,
 
     @Override
     public void onAllUsersRetrieved(List<User> users) {
-        javafx.application.Platform.runLater(() -> {
+        Platform.runLater(() -> {
             allUsers.clear();
-            allUsers.addAll(users);
+            soutt("Adding The Participants To The Map....."+users);
+            allUsers.addAll(users.stream().map(SimpleObjectProperty::new).toList());
             feedbackLabel.setText(""); // Clear previous feedback
         });
     }
 
     @Override
     public void onUserRetrieved(User user) {
-        javafx.application.Platform.runLater(() -> {
-            allUsers.clear();
-            if (user != null) {
-                allUsers.add(user);
-                feedbackLabel.setText("");
-            } else {
-                feedbackLabel.setText("No user found matching your search.");
-                feedbackLabel.getStyleClass().setAll("feedback-label");
-            }
+        Platform.runLater(() -> {
+            var userProperty = (new SimpleObjectProperty<>(user));
+            if(!allUsers.contains(userProperty))
+                allUsers.add(userProperty);
         });
     }
 
     @Override
     public void onCommandResponse(Response response) {
-        javafx.application.Platform.runLater(() -> {
+        Platform.runLater(() -> {
             if (response.isSuccess()) {
                 feedbackLabel.setText(response.getMessage());
                 feedbackLabel.getStyleClass().setAll("success-label");
@@ -147,6 +193,32 @@ public class AddParticipantController implements Initializable,
                 feedbackLabel.getStyleClass().setAll("feedback-label");
             }
         });
+    }
+
+    @Override
+    public StackPane getView() {
+        return new StackPane(mainContainer);
+    }
+
+    @Override
+    public void onChatParticipantsRetrieved(List<ChatParticipant> participants) {
+        participants.forEach((u)->{
+            chatClient.getChatById(((int) u.getUserId()));
+        });
+    }
+    public interface OnCancelListener{
+        public void onCancel();
+    }
+
+    OnCancelListener listener;
+
+    public void setOnCancel(OnCancelListener listener){
+        this.listener = listener;
+    }
+
+    public void handleCancelButtonClicked(ActionEvent event) {
+        if(this.listener != null)
+            listener.onCancel();
     }
 
     // Implement other necessary listeners from ChatClient if this controller needs them

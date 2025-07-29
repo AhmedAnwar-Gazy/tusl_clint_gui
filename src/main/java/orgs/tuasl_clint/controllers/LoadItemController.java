@@ -304,6 +304,8 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import orgs.tuasl_clint.client.ChatClient;
 import orgs.tuasl_clint.client.OnFileTransferListener;
 import orgs.tuasl_clint.models2.Media;
@@ -322,7 +324,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LoadItemController implements Initializable {
+public class LoadItemController implements Initializable,Controller {
 
     @FXML private HBox buttonsContainer;
     @FXML private Button cancelDownloadButton;
@@ -332,6 +334,7 @@ public class LoadItemController implements Initializable {
     @FXML private Label fileInfoLabel;
     @FXML private Label fileNameLabel;
     @FXML private HBox readyFileContainer;
+    @FXML private VBox mainContainer;
 
     private static final String FILES_ROOT_PATH = "src/main/resources/orgs/tuasl_clint/";//= FilesHelper.getFilesRootPath();
     private String FOLDER_FOR_MEDIA;
@@ -342,6 +345,14 @@ public class LoadItemController implements Initializable {
     private File file;
     private Media media;
     private FileState state = FileState.NOT_DOWNLOADED;
+
+    private StackPane mainView;
+    @Override
+    public StackPane getView() {
+        if(mainView == null)
+            mainView = new StackPane(mainContainer);
+        return mainView;
+    }
 
     public enum FileState {
         READY,

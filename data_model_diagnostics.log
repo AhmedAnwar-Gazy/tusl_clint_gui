@@ -223,19 +223,1071 @@ Add Multiple Chats                      : Executions: 1, Avg: 12.00 ms, Max: 12 
 Add/Update User                         : Executions: 27, Avg: 0.22 ms, Max: 2 ms
 
 [2025-07-25 00:37:46.617] DataModel shutdown completed
-[2025-07-28 20:55:02.448] DataModel initialized
-[2025-07-28 20:55:03.333] Chat not found: 8
-[2025-07-28 20:55:03.336] Chat not found: 8
-[2025-07-28 20:55:03.337] Chat not found: 14
-[2025-07-28 20:55:03.337] Chat not found: 16
-[2025-07-28 20:55:03.338] Chat not found: 19
-[2025-07-28 20:55:03.338] Chat not found: 19
-[2025-07-28 20:55:03.339] Chat not found: 19
-[2025-07-28 20:55:03.339] Chat not found: 19
-[2025-07-29 15:01:16.180] DataModel initialized
-[2025-07-29 15:01:17.142] Chat not found: 8
-[2025-07-29 15:01:17.146] Chat not found: 14
-[2025-07-29 15:02:18.573] DataModel initialized
-[2025-07-29 15:02:19.653] Chat not found: 1
-[2025-07-29 15:02:19.656] Chat not found: 1
-[2025-07-29 15:02:19.657] Chat not found: 2
+[2025-07-25 16:42:42.376] DataModel initialized
+[2025-07-25 16:42:43.854] Chat not found: 8
+[2025-07-25 16:42:43.857] Chat not found: 8
+[2025-07-25 16:42:43.857] Chat not found: 14
+[2025-07-25 16:42:43.858] Chat not found: 16
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.858] Chat not found: 19
+[2025-07-25 16:42:43.859] Chat not found: 19
+[2025-07-25 17:30:51.361] DataModel initialized
+[2025-07-25 17:34:40.660] DataModel initialized
+[2025-07-25 17:35:57.942] DataModel initialized
+[2025-07-25 17:38:21.366] DataModel initialized
+[2025-07-25 17:38:22.078] Chat not found: 19
+[2025-07-25 18:12:02.804] DataModel initialized
+[2025-07-25 18:13:22.210] DataModel initialized
+[2025-07-25 18:15:49.363] DataModel initialized
+[2025-07-25 18:15:50.044] Chat not found: 2
+[2025-07-25 18:15:50.046] Chat not found: 2
+[2025-07-25 18:15:50.047] Chat not found: 2
+[2025-07-25 18:16:16.694] DataModel initialized
+[2025-07-25 18:19:43.482] DataModel initialized
+[2025-07-25 18:26:29.970] DataModel initialized
+[2025-07-25 18:27:36.201] DataModel initialized
+[2025-07-25 18:28:50.972] DataModel initialized
+[2025-07-26 23:02:56.081] DataModel initialized
+[2025-07-26 23:03:23.111] DataModel initialized
+[2025-07-26 23:07:28.190] DataModel initialized
+[2025-07-26 23:07:58.662] DataModel initialized
+[2025-07-26 23:09:04.575] DataModel initialized
+[2025-07-26 23:12:02.532] DataModel initialized
+[2025-07-26 23:13:04.355] DataModel initialized
+[2025-07-26 23:17:32.302] DataModel initialized
+[2025-07-26 23:18:10.973] DataModel initialized
+[2025-07-26 23:18:37.592] DataModel initialized
+[2025-07-27 00:12:02.490] DataModel initialized
+[2025-07-27 02:28:46.053] DataModel initialized
+[2025-07-27 02:32:23.510] DataModel initialized
+[2025-07-27 02:46:05.978] DataModel initialized
+[2025-07-27 02:47:09.213] DataModel initialized
+[2025-07-27 02:50:25.499] DataModel initialized
+[2025-07-27 02:53:02.471] DataModel initialized
+[2025-07-27 02:54:31.244] DataModel initialized
+[2025-07-27 02:55:28.621] DataModel initialized
+[2025-07-27 02:56:16.263] DataModel initialized
+[2025-07-27 02:56:49.020] DataModel initialized
+[2025-07-27 02:57:47.883] DataModel initialized
+[2025-07-27 02:59:23.487] DataModel initialized
+[2025-07-27 03:00:43.621] DataModel initialized
+[2025-07-27 03:02:59.473] DataModel initialized
+[2025-07-27 03:04:01.866] DataModel initialized
+[2025-07-27 03:05:10.210] DataModel initialized
+[2025-07-27 03:06:55.571] DataModel initialized
+[2025-07-27 03:08:14.679] DataModel initialized
+[2025-07-27 03:10:08.476] DataModel initialized
+[2025-07-27 03:12:03.022] DataModel initialized
+[2025-07-27 03:14:35.649] DataModel initialized
+[2025-07-27 03:17:08.084] DataModel initialized
+[2025-07-27 03:19:07.832] DataModel initialized
+[2025-07-27 03:21:18.293] DataModel initialized
+[2025-07-27 03:25:03.731] DataModel initialized
+[2025-07-27 03:28:46.013] DataModel initialized
+[2025-07-27 03:30:53.349] DataModel initialized
+[2025-07-27 03:36:57.516] DataModel initialized
+[2025-07-27 03:37:44.351] DataModel initialized
+[2025-07-27 03:39:47.916] DataModel initialized
+[2025-07-27 03:41:47.716] DataModel initialized
+[2025-07-27 03:45:02.922] DataModel initialized
+[2025-07-27 03:47:18.724] DataModel initialized
+[2025-07-27 03:51:52.078] DataModel initialized
+[2025-07-27 03:53:58.040] DataModel initialized
+[2025-07-27 03:58:08.856] DataModel initialized
+[2025-07-27 12:47:15.481] DataModel initialized
+[2025-07-27 12:50:04.836] DataModel initialized
+[2025-07-27 12:51:07.149] DataModel initialized
+[2025-07-27 13:01:53.270] DataModel initialized
+[2025-07-27 13:08:30.872] DataModel initialized
+[2025-07-27 13:11:10.501] DataModel initialized
+[2025-07-27 13:17:43.357] DataModel initialized
+[2025-07-27 13:18:57.277] DataModel initialized
+[2025-07-27 13:21:59.638] DataModel initialized
+[2025-07-27 13:22:30.289] DataModel initialized
+[2025-07-27 13:25:17.725] DataModel initialized
+[2025-07-27 13:27:45.300] DataModel initialized
+[2025-07-27 13:29:33.765] DataModel initialized
+[2025-07-27 13:30:37.708] DataModel initialized
+[2025-07-27 13:31:18.793] DataModel initialized
+[2025-07-27 13:31:44.770] DataModel initialized
+[2025-07-27 13:32:29.010] DataModel initialized
+[2025-07-27 13:32:55.624] DataModel initialized
+[2025-07-27 13:33:15.319] DataModel initialized
+[2025-07-27 13:33:35.967] DataModel initialized
+[2025-07-27 13:33:52.308] DataModel initialized
+[2025-07-27 13:34:18.605] DataModel initialized
+[2025-07-27 13:34:39.820] DataModel initialized
+[2025-07-27 13:35:18.422] DataModel initialized
+[2025-07-27 13:35:37.864] DataModel initialized
+[2025-07-27 13:36:27.744] DataModel initialized
+[2025-07-27 13:37:55.459] DataModel initialized
+[2025-07-27 13:42:07.696] DataModel initialized
+[2025-07-27 13:44:34.341] DataModel initialized
+[2025-07-27 13:47:10.766] DataModel initialized
+[2025-07-27 13:47:11.342] Chat not found: 16
+[2025-07-28 13:22:39.702] DataModel initialized
+[2025-07-28 13:22:40.347] Chat not found: 19
+[2025-07-28 13:22:40.350] Chat not found: 19
+[2025-07-28 13:22:40.350] Chat not found: 19
+[2025-07-28 13:27:38.741] DataModel initialized
+[2025-07-28 13:28:24.336] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.345] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.350] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.355] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.362] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.367] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.370] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.375] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.379] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.384] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.784] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.784] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.784] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.785] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.789] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.792] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.792] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.792] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.795] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.801] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.801] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.801] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.803] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.809] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.809] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.810] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.811] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.816] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.830] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.830] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.836] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.840] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.856] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.858] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.858] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:28:24.869] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:29:22.030] DataModel initialized
+[2025-07-28 13:30:07.909] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.917] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.923] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.941] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.943] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.945] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.947] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.949] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.951] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:07.954] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:09.992] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:09.996] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:09.996] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:09.998] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:09.998] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.006] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.017] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.018] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.991] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.991] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.991] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.991] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.991] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.997] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.997] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:10.997] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.003] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.003] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.004] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.006] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.014] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.015] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.019] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.028] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.037] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.037] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.044] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.045] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.827] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.836] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.836] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.837] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.837] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.843] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.843] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.852] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.852] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.852] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.852] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.857] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.857] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.864] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:11.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:12.817] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:12.818] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.096] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.096] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.352] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.352] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.847] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.848] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.880] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.881] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.900] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.919] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.920] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.934] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.946] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.946] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.970] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.976] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.978] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:14.997] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.005] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.005] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.031] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.037] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.037] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.064] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.069] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.069] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.095] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.101] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.101] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.128] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.131] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.131] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.159] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.162] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.162] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.192] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.194] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.194] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.225] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.226] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.226] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.258] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.275] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.275] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.307] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.307] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.873] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:15.874] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.384] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.385] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.410] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.410] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.448] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.449] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.479] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.480] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.497] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.497] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.512] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.513] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.533] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.533] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.544] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.544] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.563] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.566] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.575] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.576] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.599] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.606] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.611] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.613] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.631] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.631] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.641] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.641] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.663] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.664] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.673] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.673] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.694] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.694] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.700] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.700] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.722] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.722] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.728] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.729] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.761] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.761] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.766] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.767] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.792] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.795] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.801] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.801] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.829] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.833] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.834] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.836] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:16.865] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:17.519] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:17.519] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.011] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.011] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.043] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.043] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.075] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.075] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.107] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.107] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.127] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.141] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.141] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.160] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.170] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.170] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.193] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.204] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.205] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.226] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.237] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.237] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.261] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.268] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.268] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.290] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.296] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.296] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.328] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.334] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.335] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.363] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.367] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.367] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.395] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.398] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.399] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.429] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.432] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.435] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.462] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.465] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.465] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.511] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:30:18.512] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:34:17.688] DataModel initialized
+[2025-07-28 13:40:00.210] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.210] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.212] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.213] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.215] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.215] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.215] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.216] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.218] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.221] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.223] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:00.223] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.048] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.048] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.048] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.048] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.049] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.059] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:02.063] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.316] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.317] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.317] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.856] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.857] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.858] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:03.859] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:06.060] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:06.061] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:13.357] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:13.357] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:13.804] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:13.804] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:14.234] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:14.235] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:14.731] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:14.732] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.282] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.284] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.289] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.312] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.319] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.328] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.361] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.761] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.810] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.859] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.905] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.922] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.937] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:40:18.971] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:41:56.330] DataModel initialized
+[2025-07-28 13:41:56.954] Chat not found: 16
+[2025-07-28 13:41:56.957] Chat not found: 16
+[2025-07-28 13:41:56.957] Chat not found: 16
+[2025-07-28 13:41:56.957] Chat not found: 16
+[2025-07-28 13:41:56.958] Chat not found: 16
+[2025-07-28 13:41:56.958] Chat not found: 16
+[2025-07-28 13:41:56.958] Chat not found: 16
+[2025-07-28 13:41:56.958] Chat not found: 16
+[2025-07-28 13:41:56.958] Chat not found: 16
+[2025-07-28 13:42:57.664] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.666] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.677] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.681] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.685] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.688] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.689] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.693] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.695] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.695] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.703] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:42:57.705] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.305] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.306] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.317] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.318] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.319] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.331] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:43:34.355] Create User Card List Item failed: Error resolving onAction='#handleVideoCallButtonAction', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/alraw/OneDrive/سطح%20المكتب/ChatSystem/toasol/tuasl_clint%20-%20Copy/tusl_clint_gui/target/classes/orgs/tuasl_clint/fxml/userCard.fxml:36
+
+[2025-07-28 13:45:24.699] DataModel initialized
+[2025-07-28 13:45:25.283] Chat not found: 14
+[2025-07-28 13:51:00.733] DataModel initialized
+[2025-07-28 13:57:25.093] DataModel initialized
+[2025-07-28 13:59:12.107] Create User Card List Item failed: Index 4 out of bounds for length 4
+[2025-07-28 13:59:12.437] Create User Card List Item failed: Index 5 out of bounds for length 4
+[2025-07-28 13:59:12.993] Create User Card List Item failed: Index 6 out of bounds for length 4
+[2025-07-28 13:59:12.996] Create User Card List Item failed: Index 7 out of bounds for length 4
+[2025-07-28 13:59:13.343] Create User Card List Item failed: Index 8 out of bounds for length 4
+[2025-07-28 13:59:13.896] Create User Card List Item failed: Index 9 out of bounds for length 4
+[2025-07-28 14:12:32.460] DataModel initialized
+[2025-07-29 15:06:27.228] DataModel initialized
+[2025-07-29 15:07:07.643] DataModel initialized
+[2025-07-29 15:07:08.675] Chat not found: 1
+[2025-07-29 15:07:08.679] Chat not found: 1
+[2025-07-29 15:45:51.295] DataModel initialized
+[2025-07-29 15:45:51.966] Chat not found: 2
+[2025-07-29 15:45:51.968] Chat not found: 1

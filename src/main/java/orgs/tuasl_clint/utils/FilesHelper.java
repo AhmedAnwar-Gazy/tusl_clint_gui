@@ -96,27 +96,25 @@ public class FilesHelper {
         }
         return path;
     }
-    public static String getFilePath(fileType type) throws IOException {
-        String path = "src/main/resources/orgs/tuasl_clint/";
-        switch(type){
-            case VIDEO ->path += "videos";
-            case IMAGE ->path+= "images";
-            case FILE -> path += "file";
-            case STICKER -> path += "sticker";
-            case AUDIO -> path += "voiceNote";
-            default -> throw new IOException("this file is not good!!");
-        }
+    public static String getFilePath(fileType type){
+        String path = "src/main/resources/orgs/tuasl_clint/"+
+            switch(type){
+                case VIDEO ->"videos";
+                case IMAGE ->"images";
+                case STICKER -> "sticker";
+                case AUDIO -> "voiceNote";
+                default -> "file";
+            };
         return path;
     }
-    public static String getMediaViewerPath(File file)throws Exception{
-        String path = "/orgs/tuasl_clint/fxml/";
-        switch(getFileType(file)){
-            case VIDEO ->path += "videoItem.fxml";
-            case IMAGE ->path+= "imageItem.fxml";
-            case FILE, STICKER -> path += "fileItem.fxml";
-            case AUDIO -> path += "audioItem.fxml";
-            default -> throw new Exception("this file is not good!!");
-        }
+    public static String getMediaViewerPath(File file){
+        String path = "/orgs/tuasl_clint/fxml/" +
+            switch(getFileType(file)){
+                case VIDEO -> "videoItem.fxml";
+                case IMAGE -> "imageItem.fxml";
+                case AUDIO -> "audioItem.fxml";
+                default -> "fileItem.fxml";
+            };
         return path;
     }
     public static long getFileSize(File file){
