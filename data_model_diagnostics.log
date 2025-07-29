@@ -1284,10 +1284,28 @@ Add/Update User                         : Executions: 27, Avg: 0.22 ms, Max: 2 m
 [2025-07-28 13:59:13.343] Create User Card List Item failed: Index 8 out of bounds for length 4
 [2025-07-28 13:59:13.896] Create User Card List Item failed: Index 9 out of bounds for length 4
 [2025-07-28 14:12:32.460] DataModel initialized
-[2025-07-29 15:06:27.228] DataModel initialized
-[2025-07-29 15:07:07.643] DataModel initialized
-[2025-07-29 15:07:08.675] Chat not found: 1
-[2025-07-29 15:07:08.679] Chat not found: 1
-[2025-07-29 15:45:51.295] DataModel initialized
-[2025-07-29 15:45:51.966] Chat not found: 2
-[2025-07-29 15:45:51.968] Chat not found: 1
+[2025-07-28 14:13:21.071] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.078] Chat not found for participant: 0
+[2025-07-28 14:13:21.079] Chat not found for participant: 0
+[2025-07-28 14:13:21.079] Chat not found for participant: 0
+[2025-07-28 14:13:21.079] Chat not found for participant: 0
+[2025-07-28 14:13:21.079] Chat not found for participant: 0
+[2025-07-28 14:13:21.079] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-28 14:13:21.080] Chat not found for participant: 0
+[2025-07-29 15:36:28.722] DataModel initialized
+[2025-07-29 15:41:05.413] DataModel initialized
+[2025-07-29 15:42:29.097] DataModel initialized
+[2025-07-29 15:43:15.025] Create Add Participant View failed: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was BEGIN_OBJECT at line 1 column 2 path $
+[2025-07-29 15:45:12.938] DataModel initialized
+[2025-07-29 15:46:30.424] DataModel initialized
+[2025-07-29 15:51:05.022] DataModel initialized

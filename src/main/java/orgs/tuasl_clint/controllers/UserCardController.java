@@ -109,7 +109,7 @@ public class UserCardController implements Initializable,Controller {
                 try {
                     Response response = ChatClient.getInstance().initiateVideoCall(String.valueOf(user.get().getId()));
                     if(response.isSuccess()){
-                        Navigation.loadPage("VideoCallView.fxml");
+//                        Navigation.loadPage("VideoCallView.fxml");
                     }else{
                         JOptionPane.showMessageDialog(null,"Cannot Start The Video Call Error : "+response.getMessage());
                     }
