@@ -223,3 +223,19 @@ Add Multiple Chats                      : Executions: 1, Avg: 12.00 ms, Max: 12 
 Add/Update User                         : Executions: 27, Avg: 0.22 ms, Max: 2 ms
 
 [2025-07-25 00:37:46.617] DataModel shutdown completed
+[2025-07-28 20:55:02.448] DataModel initialized
+[2025-07-28 20:55:03.333] Chat not found: 8
+[2025-07-28 20:55:03.336] Chat not found: 8
+[2025-07-28 20:55:03.337] Chat not found: 14
+[2025-07-28 20:55:03.337] Chat not found: 16
+[2025-07-28 20:55:03.338] Chat not found: 19
+[2025-07-28 20:55:03.338] Chat not found: 19
+[2025-07-28 20:55:03.339] Chat not found: 19
+[2025-07-28 20:55:03.339] Chat not found: 19
+[2025-07-29 15:01:16.180] DataModel initialized
+[2025-07-29 15:01:17.142] Chat not found: 8
+[2025-07-29 15:01:17.146] Chat not found: 14
+[2025-07-29 15:02:18.573] DataModel initialized
+[2025-07-29 15:02:19.653] Chat not found: 1
+[2025-07-29 15:02:19.656] Chat not found: 1
+[2025-07-29 15:02:19.657] Chat not found: 2

@@ -29,9 +29,9 @@ public class ChatClient implements AutoCloseable {
     // Singleton instance
     private static ChatClient instance;
 
-    private static final String SERVER_IP = "127.0.0.1"; // Localhost
-//    private static final String SERVER_IP = "3.83.141.156"; // Localhost
-//    private static final String SERVER_IP = "192.168.1.99"; // Localhost
+//    private static final String SERVER_IP = "127.0.0.1"; // Localhost
+  // private static final String SERVER_IP = "3.83.141.156"; // Localhost
+    private static final String SERVER_IP = "192.168.1.99"; // Localhost
     private static final int SERVER_PORT = 6373;
     private static final int FILE_TRANSFER_PORT = 6374;
 
