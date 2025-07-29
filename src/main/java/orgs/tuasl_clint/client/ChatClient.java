@@ -494,6 +494,20 @@ public class ChatClient implements AutoCloseable {
             this.currentUser = gson.fromJson(loginResponse.getData(), User.class);
             notifyLoginSuccess(currentUser);
             notifyStatusUpdate("Logged in as: " + currentUser.getPhoneNumber() + " (" + currentUser.getFirstName() + " " + currentUser.getLastName() + ")");
+            try {
+                // Initialize separate UDP sockets for video and audio
+                udpVideoSocket = new DatagramSocket();
+                localVideoUdpPort = udpVideoSocket.getLocalPort();
+                System.out.println("Client UDP video socket opened on port: " + localVideoUdpPort);
+
+                udpAudioSocket = new DatagramSocket();
+                localAudioUdpPort = udpAudioSocket.getLocalPort();
+                System.out.println("Client UDP audio socket opened on port: " + localAudioUdpPort);
+
+            } catch (SocketException e) {
+                System.err.println("Error opening UDP sockets: " + e.getMessage());
+            }
+
         } else if (loginResponse != null) {
             notifyCommandResponse(loginResponse); // Notify other listeners about failed login
         }
