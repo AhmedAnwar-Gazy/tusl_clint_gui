@@ -665,7 +665,9 @@ public class DataModel implements
                         };
                         getUserFromServerTask.setOnSucceeded(abc -> {
                             if(getUserFromServerTask.getValue().isSuccess()){
-                                message.setSenderName(users.get(message.getSenderId()).get().getFirstName());
+                                if(users.get(message.getSenderId()) != null)
+                                    message.setSenderName(users.get(message.getSenderId()).get().getFirstName());
+                                //TODO: get this user from server then add his name to this message
                             }
                             else {
                                 soutt("Cannot Fetch The Sender Name Of Message : "+ message.toString());
@@ -949,11 +951,11 @@ public class DataModel implements
 
     // Utility methods
     private static void soutt(String msg) {
-        System.out.println("[INFO] " + msg);
+        System.out.println("----- ["+Thread.currentThread().getName()+"][DataModel] : " + msg);
     }
 
     private static void serrr(String msg) {
-        System.err.println("[ERROR] " + msg);
+        System.err.println("----- ["+Thread.currentThread().getName()+"][DataModel] : " + msg);
     }
 
     // Shutdown hook for performance reporting

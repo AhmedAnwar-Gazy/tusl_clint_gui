@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import orgs.tuasl_clint.models2.*;
 import orgs.tuasl_clint.protocol.*;
 import orgs.tuasl_clint.utils.*;
+import orgs.tuasl_clint.utils.BackendThreadManager.Executor;
 
 import javax.swing.*;
 import java.io.*;
@@ -30,9 +31,9 @@ public class ChatClient implements AutoCloseable {
     // Singleton instance
     private static ChatClient instance;
 
-    private static final String SERVER_IP = "127.0.0.1"; // Localhost
+//    private static final String SERVER_IP = "127.0.0.1"; // Localhost
 //    private static final String SERVER_IP = "3.83.141.156"; // Localhost
-//    private static final String SERVER_IP = "192.168.1.99"; // Localhost
+    private static final String SERVER_IP = "192.168.1.99"; // Localhost
     private static final int SERVER_PORT = 6373;
     private static final int FILE_TRANSFER_PORT = 6374;
 
@@ -208,53 +209,53 @@ public class ChatClient implements AutoCloseable {
     }
 
     private void notifyNewMessageReceived(Message message) {
-        newMessageListeners.forEach(l -> l.onNewMessageReceived(message));
+        newMessageListeners.forEach(l -> Executor.execute(()-> l.onNewMessageReceived(message)));
     }
 
     private void notifyLoginSuccess(User user) {
-        loginSuccessListeners.forEach(l -> l.onLoginSuccess(user));
+        loginSuccessListeners.forEach(l -> Executor.execute(()->l.onLoginSuccess(user)));
     }
 
     private void notifyMessagesRetrieved(List<Message> messages, int chatId) {
-        messagesRetrievedListeners.forEach(l -> l.onMessagesRetrieved(messages, chatId));
+        messagesRetrievedListeners.forEach(l -> Executor.execute(()->l.onMessagesRetrieved(messages, chatId)));
     }
 
     private void notifyAllUsersRetrieved(List<User> users) {
-        allUsersRetrievedListeners.forEach(l -> l.onAllUsersRetrieved(users));
+        allUsersRetrievedListeners.forEach(l -> Executor.execute(()->l.onAllUsersRetrieved(users)));
     }
 
     private void notifyUserChatsRetrieved(List<Chat> chats) {
-        userChatsRetrievedListeners.forEach(l -> l.onUserChatsRetrieved(chats));
+        userChatsRetrievedListeners.forEach(l ->Executor.execute(()-> l.onUserChatsRetrieved(chats)));
     }
 
     private void notifyContactsRetrieved(List<User> contacts) {
-        contactsRetrievedListeners.forEach(l -> l.onContactsRetrieved(contacts));
+        contactsRetrievedListeners.forEach(l -> Executor.execute(()->l.onContactsRetrieved(contacts)));
     }
 
     private void notifyNotificationsRetrieved(List<Notification> notifications) {
-        notificationsRetrievedListeners.forEach(l -> l.onNotificationsRetrieved(notifications));
+        notificationsRetrievedListeners.forEach(l ->Executor.execute(()-> l.onNotificationsRetrieved(notifications)));
     }
 
     private void notifyChatParticipantsRetrieved(List<ChatParticipant> participants) {
-        chatParticipantsRetrievedListeners.forEach(l -> l.onChatParticipantsRetrieved(participants));
+        chatParticipantsRetrievedListeners.forEach(l ->Executor.execute(()-> l.onChatParticipantsRetrieved(participants)));
     }
 
     private void notifyConnectionFailure(String errorMessage) {
-        connectionFailureListeners.forEach(l -> l.onConnectionFailure(errorMessage));
+        connectionFailureListeners.forEach(l ->Executor.execute(()-> l.onConnectionFailure(errorMessage)));
         System.err.println("[Connection Failure]: " + errorMessage); // Fallback to console for critical errors
     }
 
     public void notifyStatusUpdate(String status) {
-        statusUpdateListeners.forEach(l -> l.onStatusUpdate(status));
+        statusUpdateListeners.forEach(l -> Executor.execute(()->l.onStatusUpdate(status)));
         System.out.println("[Status Update]: " + status); // Fallback to console for general status
     }
 
     private void notifyChatRetrieved(Chat chat) { // New notification helper
-        chatRetrievedListeners.forEach(l -> l.onChatRetrieved(chat));
+        chatRetrievedListeners.forEach(l ->Executor.execute(()-> l.onChatRetrieved(chat)));
     }
 
     private void notifyUserRetrieved(User user) { // New notification helper
-        userRetrievedListeners.forEach(l -> l.onUserRetrieved(user));
+        userRetrievedListeners.forEach(l ->Executor.execute(()-> l.onUserRetrieved(user)));
     }
 
     // --- Core Listener Thread ---
