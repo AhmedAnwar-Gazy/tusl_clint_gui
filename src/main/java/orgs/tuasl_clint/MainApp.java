@@ -4,6 +4,7 @@ package orgs.tuasl_clint;
 import javafx.application.Application;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import org.opencv.core.Core;
 import orgs.tuasl_clint.client.ChatClient;
 import orgs.tuasl_clint.utils.BackendThreadManager.DataModel;
 import orgs.tuasl_clint.utils.DatabaseConnectionSQLite;
@@ -21,7 +22,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     @Override
     public void start(Stage stage) throws IOException {
-
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         ChatClient.getInstance().addOnLoginSuccessListener(user -> {
                 DataModel.getInstance();
         });

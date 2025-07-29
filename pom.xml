@@ -65,12 +65,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.bytedeco</groupId>
-      <artifactId>javacv-platform</artifactId>
-      <version>1.5.10</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
       <version>22.0.1</version>
@@ -82,13 +76,6 @@
     </dependency>
 
 
-    <!-- في ملف pom.xml إذا كنت تستخدم Maven -->
-
-    <dependency>
-      <groupId>org.bytedeco</groupId>
-      <artifactId>opencv-platform</artifactId>
-      <version>4.7.0-1.5.9</version>
-    </dependency>
 
     <dependency>
       <groupId>com.google.code.gson</groupId>

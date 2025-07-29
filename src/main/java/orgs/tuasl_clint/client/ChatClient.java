@@ -368,6 +368,7 @@ public class ChatClient implements AutoCloseable {
 
                             try {
                                 // Get own public video and audio addresses via STUN
+                                System.out.println("&&&&&&&&&"+udpVideoSocket.getLocalPort());
                                 InetSocketAddress publicVideoAddress = getPublicAddress(udpVideoSocket);
                                 InetSocketAddress publicAudioAddress = getPublicAddress(udpAudioSocket);
 

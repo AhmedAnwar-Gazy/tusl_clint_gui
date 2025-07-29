@@ -10,7 +10,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import org.bytedeco.libfreenect._freenect_device;
+
 
 import java.awt.*;
 import java.io.File;
