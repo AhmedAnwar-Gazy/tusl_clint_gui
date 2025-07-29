@@ -1427,8 +1427,8 @@ public class ChatClient implements AutoCloseable {
                 localVideoUdpPort = udpVideoSocket.getLocalPort();
                 System.out.println("Client UDP video socket opened on port: " + localVideoUdpPort);
             } catch (SocketException e) {
-                serrr("Error opening UDP video socket for call E-MSG : " + e.getMessage());
-                return new Response(false,"Error opening UDP video socket for call E-MSG : " + e.getMessage(),null);
+                System.err.println("Error opening UDP video socket for call: " + e.getMessage());
+                return new Response(false,e.getMessage(),null);
             }
         }
         if (udpAudioSocket == null || udpAudioSocket.isClosed()) {
@@ -1437,8 +1437,8 @@ public class ChatClient implements AutoCloseable {
                 localAudioUdpPort = udpAudioSocket.getLocalPort();
                 System.out.println("Client UDP audio socket opened on port: " + localAudioUdpPort);
             } catch (SocketException e) {
-                serrr("Error opening UDP audio socket for call: " + e.getMessage());
-                return new Response(false,"Error opening UDP audio socket for call: " + e.getMessage(),null );
+                System.err.println("Error opening UDP audio socket for call: " + e.getMessage());
+                return new Response(false,e.getMessage(),null);
             }
         }
 
@@ -1453,7 +1453,7 @@ public class ChatClient implements AutoCloseable {
 
 
         if (myPublicVideoIp == null || myPublicVideoPort == -1 || myPublicAudioIp == null || myPublicAudioPort == -1) {
-            serrr("Could not determine public video and/or audio IP/port via STUN. Cannot initiate video call.");
+            System.err.println("Could not determine public video and/or audio IP/port via STUN. Cannot initiate video call.");
             return new Response(false,"Could not determine public video and/or audio IP/port via STUN. Cannot initiate video call.",null);
         }
 
@@ -1535,6 +1535,7 @@ public class ChatClient implements AutoCloseable {
         }
         videoReceiverThread.setVideoDisplayLabel(videoLabel);
     }
+
 
     /**
      * Stops both video and audio capture/receiver threads.
